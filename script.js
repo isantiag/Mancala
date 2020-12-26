@@ -1378,6 +1378,313 @@ document.addEventListener("DOMContentLoaded", (e) => {
     }
   });
 
+  pos2_3.addEventListener('click', (e) =>{
+    document.querySelector('p').innerHTML = '';
+    switch(stonesPerLoc[10]){
+      case 1:
+        stonesPerLoc[10] = 0;
+        stonesPerLoc[11] = stonesPerLoc[11]+1;
+        UpdateStones();
+        checkLastPos(stonesPerLoc[11],'player1',stonesPerLoc[4]);
+        break
+      case 2:
+        stonesPerLoc[10] = 0;
+        stonesPerLoc[11] = stonesPerLoc[11]+1; 
+        stonesPerLoc[12] = stonesPerLoc[12]+1; 
+        UpdateStones();
+        checkLastPos(stonesPerLoc[12],'player1',stonesPerLoc[5]);
+        break
+      case 3:
+        stonesPerLoc[10] = 0; 
+        stonesPerLoc[11] = stonesPerLoc[11]+1; 
+        stonesPerLoc[12] = stonesPerLoc[12]+1; 
+        stonesPerLoc[13] = stonesPerLoc[13]+1; 
+        UpdateStones();
+        checkLastPos(stonesPerLoc[13],'player1',stonesPerLoc[6]);
+        break
+      case 4:
+        stonesPerLoc[10] = 0;
+        stonesPerLoc[11] = stonesPerLoc[11]+1; 
+        stonesPerLoc[12] = stonesPerLoc[12]+1; 
+        stonesPerLoc[13] = stonesPerLoc[13]+1; 
+        stonesPerLoc[7] = stonesPerLoc[7]+1; 
+        total--; 
+        UpdateStones();
+        document.querySelector('p').innerHTML = 'Play again';
+        break
+      case 5:
+        stonesPerLoc[10] = 0;
+        stonesPerLoc[11] = stonesPerLoc[11]+1; 
+        stonesPerLoc[12] = stonesPerLoc[12]+1; 
+        stonesPerLoc[13] = stonesPerLoc[13]+1; 
+        stonesPerLoc[7] = stonesPerLoc[7]+1; 
+        stonesPerLoc[6] = stonesPerLoc[6]+1; 
+        total--; 
+        UpdateStones();
+        updatePlayerDisplay('player1');
+        break
+      case 6:
+        stonesPerLoc[10] = 0;
+        stonesPerLoc[11] = stonesPerLoc[11]+1; 
+        stonesPerLoc[12] = stonesPerLoc[12]+1; 
+        stonesPerLoc[13] = stonesPerLoc[13]+1;
+        stonesPerLoc[7] = stonesPerLoc[7]+1;
+        stonesPerLoc[6] = stonesPerLoc[6]+1;
+        stonesPerLoc[5] = stonesPerLoc[5]+1;
+        total--;  
+        UpdateStones();
+        updatePlayerDisplay('player1');
+        break
+      case 7:
+        stonesPerLoc[10] = 0;
+        stonesPerLoc[11] = stonesPerLoc[11]+1; 
+        stonesPerLoc[12] = stonesPerLoc[12]+1; 
+        stonesPerLoc[13] = stonesPerLoc[13]+1;
+        stonesPerLoc[7] = stonesPerLoc[7]+1; 
+        stonesPerLoc[6] = stonesPerLoc[6]+1; 
+        stonesPerLoc[5] = stonesPerLoc[5]+1; 
+        stonesPerLoc[4] = stonesPerLoc[4]+1; 
+        total--;
+        UpdateStones();
+        updatePlayerDisplay('player1');
+        break
+      case 8:
+        stonesPerLoc[10] = 0; 
+        stonesPerLoc[11] = stonesPerLoc[11]+1; 
+        stonesPerLoc[12] = stonesPerLoc[12]+1; 
+        stonesPerLoc[13] = stonesPerLoc[13]+1;
+        stonesPerLoc[7] = stonesPerLoc[7]+1; 
+        stonesPerLoc[6] = stonesPerLoc[6]+1; 
+        stonesPerLoc[5] = stonesPerLoc[5]+1; 
+        stonesPerLoc[4] = stonesPerLoc[4]+1; 
+        stonesPerLoc[3] = stonesPerLoc[3]+1; 
+        total--;
+        UpdateStones();
+        updatePlayerDisplay('player1');
+        break
+      case 9:
+        stonesPerLoc[10] = 0;
+        stonesPerLoc[11] = stonesPerLoc[11]+1; 
+        stonesPerLoc[12] = stonesPerLoc[12]+1; 
+        stonesPerLoc[13] = stonesPerLoc[13]+1;
+        stonesPerLoc[7] = stonesPerLoc[7]+1; 
+        stonesPerLoc[6] = stonesPerLoc[6]+1; 
+        stonesPerLoc[5] = stonesPerLoc[5]+1; 
+        stonesPerLoc[4] = stonesPerLoc[4]+1; 
+        stonesPerLoc[3] = stonesPerLoc[3]+1; 
+        stonesPerLoc[2] = stonesPerLoc[2]+1; 
+        total--;
+        UpdateStones();
+        updatePlayerDisplay('player1');
+        break
+      case 10:
+        stonesPerLoc[10] = 0;
+        stonesPerLoc[11] = stonesPerLoc[11]+1; 
+        stonesPerLoc[12] = stonesPerLoc[12]+1; 
+        stonesPerLoc[13] = stonesPerLoc[13]+1;
+        stonesPerLoc[7] = stonesPerLoc[7]+1; 
+        stonesPerLoc[6] = stonesPerLoc[6]+1; 
+        stonesPerLoc[5] = stonesPerLoc[5]+1;  
+        stonesPerLoc[4] = stonesPerLoc[4]+1;
+        stonesPerLoc[3] = stonesPerLoc[3]+1;
+        stonesPerLoc[2] = stonesPerLoc[2]+1;
+        stonesPerLoc[1] = stonesPerLoc[1]+1;
+        total--;  
+        UpdateStones();
+        updatePlayerDisplay('player1');
+        break
+      case 11:
+        stonesPerLoc[10] = 0;
+        stonesPerLoc[11] = stonesPerLoc[11]+1; 
+        stonesPerLoc[12] = stonesPerLoc[12]+1; 
+        stonesPerLoc[13] = stonesPerLoc[13]+1;
+        stonesPerLoc[7] = stonesPerLoc[7]+1; 
+        stonesPerLoc[6] = stonesPerLoc[6]+1; 
+        stonesPerLoc[5] = stonesPerLoc[5]+1;  
+        stonesPerLoc[4] = stonesPerLoc[4]+1;
+        stonesPerLoc[3] = stonesPerLoc[3]+1; 
+        stonesPerLoc[2] = stonesPerLoc[2]+1;
+        stonesPerLoc[1] = stonesPerLoc[1]+1;
+        stonesPerLoc[8] = stonesPerLoc[8]+1;
+        total--;
+        UpdateStones();
+        checkLastPos(stonesPerLoc[8],'player1',stonesPerLoc[1]);
+        break
+      case 12:
+        stonesPerLoc[10] = 0;
+        stonesPerLoc[11] = stonesPerLoc[11]+1; 
+        stonesPerLoc[12] = stonesPerLoc[12]+1; 
+        stonesPerLoc[13] = stonesPerLoc[13]+1;
+        stonesPerLoc[7] = stonesPerLoc[7]+1; 
+        stonesPerLoc[6] = stonesPerLoc[6]+1; 
+        stonesPerLoc[5] = stonesPerLoc[5]+1;  
+        stonesPerLoc[4] = stonesPerLoc[4]+1;
+        stonesPerLoc[3] = stonesPerLoc[3]+1; 
+        stonesPerLoc[2] = stonesPerLoc[2]+1;  
+        stonesPerLoc[1] = stonesPerLoc[1]+1; 
+        stonesPerLoc[8] = stonesPerLoc[8]+1; 
+        stonesPerLoc[9] = stonesPerLoc[7]+1; 
+        total--;
+        UpdateStones();
+        checkLastPos(stonesPerLoc[9],'player1',stonesPerLoc[2]);
+        break
+    }
+  });
+
+  pos2_4.addEventListener('click', (e) =>{
+    document.querySelector('p').innerHTML = '';
+    switch(stonesPerLoc[10]){
+      case 1:
+        stonesPerLoc[11] = 0;
+        stonesPerLoc[12] = stonesPerLoc[12]+1;
+        UpdateStones();
+        checkLastPos(stonesPerLoc[12],'player1',stonesPerLoc[5]);
+        break
+      case 2:
+        stonesPerLoc[11] = 0;
+        stonesPerLoc[12] = stonesPerLoc[12]+1; 
+        stonesPerLoc[13] = stonesPerLoc[13]+1; 
+        UpdateStones();
+        checkLastPos(stonesPerLoc[13],'player1',stonesPerLoc[6]);
+        break
+      case 3:
+        stonesPerLoc[11] = 0; 
+        stonesPerLoc[12] = stonesPerLoc[12]+1; 
+        stonesPerLoc[13] = stonesPerLoc[13]+1; 
+        stonesPerLoc[7] = stonesPerLoc[7]+1; 
+        total--; 
+        UpdateStones();
+        document.querySelector('p').innerHTML = 'Play again';
+        break
+      case 4:
+        stonesPerLoc[11] = 0;
+        stonesPerLoc[12] = stonesPerLoc[12]+1; 
+        stonesPerLoc[13] = stonesPerLoc[13]+1; 
+        stonesPerLoc[7] = stonesPerLoc[7]+1; 
+        stonesPerLoc[6] = stonesPerLoc[6]+1; 
+        total--; 
+        UpdateStones();
+        updatePlayerDisplay('player1');
+        break
+      case 5:
+        stonesPerLoc[11] = 0;
+        stonesPerLoc[12] = stonesPerLoc[12]+1; 
+        stonesPerLoc[13] = stonesPerLoc[13]+1; 
+        stonesPerLoc[7] = stonesPerLoc[7]+1; 
+        stonesPerLoc[6] = stonesPerLoc[6]+1; 
+        stonesPerLoc[5] = stonesPerLoc[5]+1; 
+        total--; 
+        UpdateStones();
+        updatePlayerDisplay('player1');
+        break
+      case 6:
+        stonesPerLoc[11] = 0;
+        stonesPerLoc[12] = stonesPerLoc[12]+1; 
+        stonesPerLoc[13] = stonesPerLoc[13]+1;
+        stonesPerLoc[7] = stonesPerLoc[7]+1;
+        stonesPerLoc[6] = stonesPerLoc[6]+1;
+        stonesPerLoc[5] = stonesPerLoc[5]+1;
+        stonesPerLoc[4] = stonesPerLoc[4]+1;
+        total--;  
+        UpdateStones();
+        updatePlayerDisplay('player1');
+        break
+      case 7:
+        stonesPerLoc[11] = 0;
+        stonesPerLoc[12] = stonesPerLoc[12]+1; 
+        stonesPerLoc[13] = stonesPerLoc[13]+1;
+        stonesPerLoc[7] = stonesPerLoc[7]+1; 
+        stonesPerLoc[6] = stonesPerLoc[6]+1; 
+        stonesPerLoc[5] = stonesPerLoc[5]+1; 
+        stonesPerLoc[4] = stonesPerLoc[4]+1; 
+        stonesPerLoc[3] = stonesPerLoc[3]+1; 
+        total--;
+        UpdateStones();
+        updatePlayerDisplay('player1');
+        break
+      case 8:
+        stonesPerLoc[11] = 0; 
+        stonesPerLoc[12] = stonesPerLoc[12]+1; 
+        stonesPerLoc[13] = stonesPerLoc[13]+1;
+        stonesPerLoc[7] = stonesPerLoc[7]+1; 
+        stonesPerLoc[6] = stonesPerLoc[6]+1; 
+        stonesPerLoc[5] = stonesPerLoc[5]+1; 
+        stonesPerLoc[4] = stonesPerLoc[4]+1; 
+        stonesPerLoc[3] = stonesPerLoc[3]+1; 
+        stonesPerLoc[2] = stonesPerLoc[2]+1; 
+        total--;
+        UpdateStones();
+        updatePlayerDisplay('player1');
+        break
+      case 9:
+        stonesPerLoc[11] = 0; 
+        stonesPerLoc[12] = stonesPerLoc[12]+1; 
+        stonesPerLoc[13] = stonesPerLoc[13]+1;
+        stonesPerLoc[7] = stonesPerLoc[7]+1; 
+        stonesPerLoc[6] = stonesPerLoc[6]+1; 
+        stonesPerLoc[5] = stonesPerLoc[5]+1; 
+        stonesPerLoc[4] = stonesPerLoc[4]+1; 
+        stonesPerLoc[3] = stonesPerLoc[3]+1; 
+        stonesPerLoc[2] = stonesPerLoc[2]+1; 
+        stonesPerLoc[1] = stonesPerLoc[1]+1; 
+        total--;
+        UpdateStones();
+        updatePlayerDisplay('player1');
+        break
+      case 10:
+        stonesPerLoc[11] = 0; 
+        stonesPerLoc[12] = stonesPerLoc[12]+1; 
+        stonesPerLoc[13] = stonesPerLoc[13]+1;
+        stonesPerLoc[7] = stonesPerLoc[7]+1; 
+        stonesPerLoc[6] = stonesPerLoc[6]+1; 
+        stonesPerLoc[5] = stonesPerLoc[5]+1;  
+        stonesPerLoc[4] = stonesPerLoc[4]+1;
+        stonesPerLoc[3] = stonesPerLoc[3]+1;
+        stonesPerLoc[2] = stonesPerLoc[2]+1;
+        stonesPerLoc[1] = stonesPerLoc[1]+1;
+        stonesPerLoc[8] = stonesPerLoc[8]+1;
+        total--;  
+        UpdateStones();
+        checkLastPos(stonesPerLoc[8],'player1',stonesPerLoc[1]);
+        break
+      case 11:
+        stonesPerLoc[11] = 0;
+        stonesPerLoc[12] = stonesPerLoc[12]+1; 
+        stonesPerLoc[13] = stonesPerLoc[13]+1;
+        stonesPerLoc[7] = stonesPerLoc[7]+1; 
+        stonesPerLoc[6] = stonesPerLoc[6]+1; 
+        stonesPerLoc[5] = stonesPerLoc[5]+1;  
+        stonesPerLoc[4] = stonesPerLoc[4]+1;
+        stonesPerLoc[3] = stonesPerLoc[3]+1; 
+        stonesPerLoc[2] = stonesPerLoc[2]+1;
+        stonesPerLoc[1] = stonesPerLoc[1]+1;
+        stonesPerLoc[8] = stonesPerLoc[8]+1;
+        stonesPerLoc[9] = stonesPerLoc[9]+1;
+        total--;
+        UpdateStones();
+        checkLastPos(stonesPerLoc[9],'player1',stonesPerLoc[2]);
+        break
+      case 12:
+        stonesPerLoc[11] = 0;
+        stonesPerLoc[12] = stonesPerLoc[12]+1; 
+        stonesPerLoc[13] = stonesPerLoc[13]+1;
+        stonesPerLoc[7] = stonesPerLoc[7]+1; 
+        stonesPerLoc[6] = stonesPerLoc[6]+1; 
+        stonesPerLoc[5] = stonesPerLoc[5]+1;  
+        stonesPerLoc[4] = stonesPerLoc[4]+1;
+        stonesPerLoc[3] = stonesPerLoc[3]+1; 
+        stonesPerLoc[2] = stonesPerLoc[2]+1;  
+        stonesPerLoc[1] = stonesPerLoc[1]+1; 
+        stonesPerLoc[8] = stonesPerLoc[8]+1; 
+        stonesPerLoc[9] = stonesPerLoc[7]+1; 
+        stonesPerLoc[10] = stonesPerLoc[10]+1; 
+        total--;
+        UpdateStones();
+        checkLastPos(stonesPerLoc[10],'player1',stonesPerLoc[3]);
+        break
+    }
+  });
+
   if (stonesPerLoc[1] === 0 && stonesPerLoc[2] === 0 && stonesPerLoc[3] === 0 && stonesPerLoc[4] === 0 && stonesPerLoc[5] === 0 && stonesPerLoc[6] === 0) {
     stonesPerLoc[7]+=total;
     setStonesZero('player2');
