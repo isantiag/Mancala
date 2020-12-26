@@ -102,7 +102,7 @@ function checkForWinner(){
   }
 }
 
-setStonesZero(player){
+function setStonesZero(player){
   if (player === 'player1') {
     stonesPerLoc[1] = 0;
     stonesPerLoc[2] = 0;
