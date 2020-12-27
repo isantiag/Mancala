@@ -48,11 +48,11 @@ function checkLastPos(lastPosition,player, oppPosition){
     total = total -1 - stonesPerLoc[oppPosition];
     if (player = 'player2'){
       document.querySelector('p').innerHTML = "Take all playing stones from your opponent's cup";
-      stonesPerLoc[0] = 1 + stonesPerLoc[oppPosition];
+      stonesPerLoc[0] = stonesPerLoc[0] + 1 + stonesPerLoc[oppPosition];
       console.log(total);  
     }else {
       document.querySelector('p').innerHTML = "Take all playing stones from your opponent's cup";
-      stonesPerLoc[7] = 1 + stonesPerLoc[oppPosition];
+      stonesPerLoc[7] = stonesPerLoc[7] + 1 + stonesPerLoc[oppPosition];
       console.log(total);
     }
     stonesPerLoc[lastPosition] = 0;
@@ -1384,7 +1384,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
   });
 
   pos2_3.addEventListener('click', (e) =>{
-    document.querySelector('p').innerHTML = '';
+    document.querySelector('p').innerHTML = ' ';
     switch(stonesPerLoc[10]){
       case 1:
         stonesPerLoc[10] = 0;
@@ -1537,8 +1537,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
   });
 
   pos2_4.addEventListener('click', (e) =>{
-    document.querySelector('p').innerHTML = '';
-    switch(stonesPerLoc[10]){
+    console.log('hello')
+    document.querySelector('p').innerHTML = ' ';
+    switch(stonesPerLoc[11]){
       case 1:
         stonesPerLoc[11] = 0;
         stonesPerLoc[12] = stonesPerLoc[12]+1;
