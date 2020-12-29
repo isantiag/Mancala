@@ -198,6 +198,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--; 
         document.querySelector('p').innerHTML = 'Play again';
         UpdateStones();
+        checkForWinner();
         break
       case 2:
         stonesPerLoc[1] = 0;
@@ -206,6 +207,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total-- ;
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
       case 3:
         stonesPerLoc[1] = 0;
@@ -215,6 +217,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
       case 4:
         stonesPerLoc[1] = 0;
@@ -225,6 +228,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
       case 5:
         stonesPerLoc[1] = 0;
@@ -236,6 +240,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--; 
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
       case 6:
         stonesPerLoc[1] = 0;
@@ -248,6 +253,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;  
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
       case 7:
         stonesPerLoc[1] = 0;
@@ -261,6 +267,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
       case 8:
         stonesPerLoc[1] = 0; 
@@ -275,6 +282,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         checkLastPos(6,'player2',13);
+        checkForWinner();
         break
       case 9:
         stonesPerLoc[1] = 0;
@@ -290,6 +298,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         checkLastPos(5,'player2',12);
+        checkForWinner();
         break
       case 10:
         stonesPerLoc[1] = 0;
@@ -306,6 +315,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;  
         UpdateStones();
         checkLastPos(4,'player2',11);
+        checkForWinner();
         break
       case 11:
         stonesPerLoc[1] = 0;
@@ -323,6 +333,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         checkLastPos(3,'player2',10);
+        checkForWinner();
         break
       case 12:
         stonesPerLoc[1] = 0;
@@ -341,6 +352,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         checkLastPos(2,'player2',9);
+        checkForWinner();
         break
     }
   });
@@ -354,6 +366,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[1] = stonesPerLoc[1]+1;
         UpdateStones();
         checkLastPos(1,'player2',8);
+        checkForWinner();
         break
       case 2:
         stonesPerLoc[2] = 0;
@@ -362,6 +375,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total-- ;
         UpdateStones();
         document.querySelector('p').innerHTML = 'Play again';
+        checkForWinner();
         break
       case 3:
         stonesPerLoc[2] = 0;
@@ -371,6 +385,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
       case 4:
         stonesPerLoc[2] = 0;
@@ -381,6 +396,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
       case 5:
         stonesPerLoc[2] = 0;
@@ -392,6 +408,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--; 
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
       case 6:
         stonesPerLoc[2] = 0;
@@ -404,6 +421,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;  
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
       case 7:
         stonesPerLoc[2] = 0;
@@ -417,6 +435,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
       case 8:
         stonesPerLoc[2] = 0; 
@@ -431,6 +450,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
       case 9:
         stonesPerLoc[2] = 0;
@@ -446,6 +466,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         checkLastPos(6,'player2',13);
+        checkForWinner();
         break
       case 10:
         stonesPerLoc[2] = 0;
@@ -462,6 +483,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;  
         UpdateStones();
         checkLastPos(5,'player2',12);
+        checkForWinner();
         break
       case 11:
         stonesPerLoc[2] = 0;
@@ -479,6 +501,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         checkLastPos(4,'player2',11);
+        checkForWinner();
         break
       case 12:
         stonesPerLoc[2] = 0;
@@ -497,6 +520,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         checkLastPos(3,'player2',10);
+        checkForWinner();
         break
     }
   });  
@@ -509,6 +533,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[2] = stonesPerLoc[2]+1;
         UpdateStones();
         checkLastPos(2,'player2',9);
+        checkForWinner();
         break
       case 2:
         stonesPerLoc[3] = 0;
@@ -516,6 +541,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[1] = stonesPerLoc[1]+1;
         UpdateStones();
         checkLastPos(1,'player2',8);
+        checkForWinner();
         break
       case 3:
         stonesPerLoc[3] = 0;
@@ -525,6 +551,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         document.querySelector('p').innerHTML = 'Play again';
+        checkForWinner();
         break
       case 4:
         stonesPerLoc[3] = 0;
@@ -535,6 +562,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
       case 5:
         stonesPerLoc[3] = 0;
@@ -546,6 +574,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--; 
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
       case 6:
         stonesPerLoc[3] = 0;
@@ -558,6 +587,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;  
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
       case 7:
         stonesPerLoc[3] = 0;
@@ -571,6 +601,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
       case 8:
         stonesPerLoc[3] = 0; 
@@ -585,6 +616,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
       case 9:
         stonesPerLoc[3] = 0;
@@ -600,6 +632,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
       case 10:
         stonesPerLoc[3] = 0;
@@ -616,6 +649,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;  
         UpdateStones();
         checkLastPos(6,'player2',13);
+        checkForWinner();
         break
       case 11:
         stonesPerLoc[3] = 0;
@@ -633,6 +667,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         checkLastPos(5,'player2',12);
+        checkForWinner();
         break
       case 12:
         stonesPerLoc[3] = 0;
@@ -651,6 +686,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         checkLastPos(4,'player2',11);
+        checkForWinner();
         break
     }
   });  
@@ -663,6 +699,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[3] = stonesPerLoc[3]+1;
         UpdateStones();
         checkLastPos(3,'player2',10);
+        checkForWinner();
         break
       case 2:
         stonesPerLoc[4] = 0;
@@ -670,6 +707,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[2] = stonesPerLoc[2]+1;
         UpdateStones();
         checkLastPos(2,'player2',9);
+        checkForWinner();
         break
       case 3:
         stonesPerLoc[4] = 0;
@@ -678,6 +716,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[1] = stonesPerLoc[1]+1;
         UpdateStones();
         checkLastPos(1,'player2',8);
+        checkForWinner();
         break
       case 4:
         stonesPerLoc[4] = 0;
@@ -688,6 +727,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         document.querySelector('p').innerHTML = 'Play again';
+        checkForWinner();
         break
       case 5:
         stonesPerLoc[4] = 0;
@@ -699,6 +739,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--; 
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
       case 6:
         stonesPerLoc[4] = 0;
@@ -711,6 +752,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;  
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
       case 7:
         stonesPerLoc[4] = 0;
@@ -724,6 +766,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
       case 8:
         stonesPerLoc[4] = 0; 
@@ -738,6 +781,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
       case 9:
         stonesPerLoc[4] = 0;
@@ -753,6 +797,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
       case 10:
         stonesPerLoc[4] = 0;
@@ -769,6 +814,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;  
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
       case 11:
         stonesPerLoc[4] = 0;
@@ -786,6 +832,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         checkLastPos(6,'player2',13);
+        checkForWinner();
         break
       case 12:
         stonesPerLoc[4] = 0;
@@ -804,6 +851,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         checkLastPos(5,'player2',12);
+        checkForWinner();
         break
     }
   });  
@@ -816,6 +864,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[4] = stonesPerLoc[4]+1;
         UpdateStones();
         checkLastPos(4,'player2',11);
+        checkForWinner();
         break
       case 2:
         stonesPerLoc[5] = 0;
@@ -823,6 +872,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[3] = stonesPerLoc[3]+1;
         UpdateStones();
         checkLastPos(3,'player2',10);
+        checkForWinner();
         break
       case 3:
         stonesPerLoc[5] = 0;
@@ -831,6 +881,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[2] = stonesPerLoc[2]+1;
         UpdateStones();
         checkLastPos(2,'player2',9);
+        checkForWinner();
         break
       case 4:
         stonesPerLoc[5] = 0;
@@ -840,6 +891,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[1] = stonesPerLoc[1]+1;
         UpdateStones();
         checkLastPos(1,'player2',8);
+        checkForWinner();
         break
       case 5:
         stonesPerLoc[5] = 0;
@@ -851,6 +903,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--; 
         UpdateStones();
         document.querySelector('p').innerHTML = 'Play again';
+        checkForWinner();
         break
       case 6:
         stonesPerLoc[5] = 0;
@@ -863,6 +916,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;  
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
       case 7:
         stonesPerLoc[5] = 0;
@@ -876,6 +930,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
       case 8:
         stonesPerLoc[5] = 0; 
@@ -890,6 +945,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
       case 9:
         stonesPerLoc[5] = 0;
@@ -905,6 +961,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
       case 10:
         stonesPerLoc[5] = 0;
@@ -921,6 +978,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;  
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
       case 11:
         stonesPerLoc[5] = 0;
@@ -938,6 +996,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
       case 12:
         stonesPerLoc[5] = 0;
@@ -956,6 +1015,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         checkLastPos(6,'player2',13);
+        checkForWinner();
         break
     }
   }); 
@@ -968,6 +1028,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[5] = stonesPerLoc[5]+1;
         UpdateStones();
         checkLastPos(5,'player2',12);
+        checkForWinner();
         break
       case 2:
         stonesPerLoc[6] = 0;
@@ -975,6 +1036,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[4] = stonesPerLoc[4]+1;
         UpdateStones();
         checkLastPos(4,'player2',11);
+        checkForWinner();
         break
       case 3:
         stonesPerLoc[6] = 0;
@@ -983,6 +1045,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[3] = stonesPerLoc[3]+1;
         UpdateStones();
         checkLastPos(3,'player2',10);
+        checkForWinner();
         break
       case 4:
         stonesPerLoc[6] = 0;
@@ -992,6 +1055,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[2] = stonesPerLoc[2]+1;
         UpdateStones();
         checkLastPos(2,'player2',9);
+        checkForWinner();
         break
       case 5:
         stonesPerLoc[6] = 0;
@@ -1002,6 +1066,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[1] = stonesPerLoc[1]+1;
         UpdateStones();
         checkLastPos(1,'player2',8);
+        checkForWinner();
         break
       case 6:
         stonesPerLoc[6] = 0;
@@ -1014,6 +1079,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;  
         UpdateStones();
         document.querySelector('p').innerHTML = 'Play again';
+        checkForWinner();
         break
       case 7:
         stonesPerLoc[6] = 0;
@@ -1027,6 +1093,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
       case 8:
         stonesPerLoc[6] = 0; 
@@ -1041,6 +1108,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
       case 9:
         stonesPerLoc[6] = 0;
@@ -1056,6 +1124,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
       case 10:
         stonesPerLoc[6] = 0;
@@ -1072,6 +1141,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;  
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
       case 11:
         stonesPerLoc[6] = 0;
@@ -1089,6 +1159,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
       case 12:
         stonesPerLoc[6] = 0;
@@ -1107,6 +1178,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player2');
+        checkForWinner();
         break
     }
   }); 
@@ -1119,6 +1191,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[9] = stonesPerLoc[9]+1;
         UpdateStones();
         checkLastPos(9,'player1',2);
+        checkForWinner();
         break
       case 2:
         stonesPerLoc[8] = 0;
@@ -1126,6 +1199,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[10] = stonesPerLoc[10]+1; 
         UpdateStones();
         checkLastPos(10,'player1',3);
+        checkForWinner();
         break
       case 3:
         stonesPerLoc[8] = 0;
@@ -1134,6 +1208,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[11] = stonesPerLoc[11]+1; 
         UpdateStones();
         checkLastPos(11,'player1',4);
+        checkForWinner();
         break
       case 4:
         stonesPerLoc[8] = 0;
@@ -1143,6 +1218,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[12] = stonesPerLoc[12]+1; 
         UpdateStones();
         checkLastPos(12,'player1',5);
+        checkForWinner();
         break
       case 5:
         stonesPerLoc[8] = 0;
@@ -1153,6 +1229,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[13] = stonesPerLoc[13]+1; 
         UpdateStones();
         checkLastPos(13,'player1',6);
+        checkForWinner();
         break
       case 6:
         stonesPerLoc[8] = 0;
@@ -1165,6 +1242,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;  
         UpdateStones();
         document.querySelector('p').innerHTML = 'Play again';
+        checkForWinner();
         break
       case 7:
         stonesPerLoc[8] = 0;
@@ -1178,6 +1256,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
       case 8:
         stonesPerLoc[8] = 0; 
@@ -1192,6 +1271,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
       case 9:
         stonesPerLoc[8] = 0;
@@ -1207,6 +1287,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
       case 10:
         stonesPerLoc[8] = 0;
@@ -1223,6 +1304,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;  
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
       case 11:
         stonesPerLoc[8] = 0;
@@ -1240,6 +1322,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
       case 12:
         stonesPerLoc[8] = 0;
@@ -1258,6 +1341,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
     }
   });
@@ -1270,6 +1354,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[10] = stonesPerLoc[10]+1;
         UpdateStones();
         checkLastPos(10,'player1',3);
+        checkForWinner();
         break
       case 2:
         stonesPerLoc[9] = 0;
@@ -1277,6 +1362,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[11] = stonesPerLoc[11]+1; 
         UpdateStones();
         checkLastPos(11,'player1',4);
+        checkForWinner();
         break
       case 3:
         stonesPerLoc[9] = 0;
@@ -1285,6 +1371,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[12] = stonesPerLoc[12]+1; 
         UpdateStones();
         checkLastPos(12,'player1',5);
+        checkForWinner();
         break
       case 4:
         stonesPerLoc[9] = 0;
@@ -1294,6 +1381,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[13] = stonesPerLoc[13]+1; 
         UpdateStones();
         checkLastPos(13,'player1',6);
+        checkForWinner();
         break
       case 5:
         stonesPerLoc[9] = 0;
@@ -1305,6 +1393,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--; 
         UpdateStones();
         document.querySelector('p').innerHTML = 'Play again';
+        checkForWinner();
         break
       case 6:
         stonesPerLoc[9] = 0;
@@ -1317,6 +1406,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;  
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
       case 7:
         stonesPerLoc[9] = 0;
@@ -1330,6 +1420,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
       case 8:
         stonesPerLoc[9] = 0; 
@@ -1344,6 +1435,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
       case 9:
         stonesPerLoc[9] = 0;
@@ -1359,6 +1451,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
       case 10:
         stonesPerLoc[9] = 0;
@@ -1375,6 +1468,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;  
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
       case 11:
         stonesPerLoc[9] = 0;
@@ -1392,6 +1486,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
       case 12:
         stonesPerLoc[9] = 0;
@@ -1410,6 +1505,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         checkLastPos(8,'player1',1);
+        checkForWinner();
         break
     }
   });
@@ -1422,6 +1518,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[11] = stonesPerLoc[11]+1;
         UpdateStones();
         checkLastPos(11,'player1',4);
+        checkForWinner();
         break
       case 2:
         stonesPerLoc[10] = 0;
@@ -1429,6 +1526,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[12] = stonesPerLoc[12]+1; 
         UpdateStones();
         checkLastPos(12,'player1',5);
+        checkForWinner();
         break
       case 3:
         stonesPerLoc[10] = 0; 
@@ -1437,6 +1535,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[13] = stonesPerLoc[13]+1; 
         UpdateStones();
         checkLastPos(13,'player1',6);
+        checkForWinner();
         break
       case 4:
         stonesPerLoc[10] = 0;
@@ -1447,6 +1546,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--; 
         UpdateStones();
         document.querySelector('p').innerHTML = 'Play again';
+        checkForWinner();
         break
       case 5:
         stonesPerLoc[10] = 0;
@@ -1458,6 +1558,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--; 
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
       case 6:
         stonesPerLoc[10] = 0;
@@ -1470,6 +1571,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;  
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
       case 7:
         stonesPerLoc[10] = 0;
@@ -1483,6 +1585,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
       case 8:
         stonesPerLoc[10] = 0; 
@@ -1497,6 +1600,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
       case 9:
         stonesPerLoc[10] = 0;
@@ -1512,6 +1616,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
       case 10:
         stonesPerLoc[10] = 0;
@@ -1528,6 +1633,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;  
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
       case 11:
         stonesPerLoc[10] = 0;
@@ -1545,6 +1651,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         checkLastPos(8,'player1',1);
+        checkForWinner();
         break
       case 12:
         stonesPerLoc[10] = 0;
@@ -1563,6 +1670,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         checkLastPos(9,'player1',2);
+        checkForWinner();
         break
     }
   });
@@ -1575,6 +1683,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[12] = stonesPerLoc[12]+1;
         UpdateStones();
         checkLastPos(12,'player1',5);
+        checkForWinner();
         break
       case 2:
         stonesPerLoc[11] = 0;
@@ -1582,6 +1691,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[13] = stonesPerLoc[13]+1; 
         UpdateStones();
         checkLastPos(13,'player1',6);
+        checkForWinner();
         break
       case 3:
         stonesPerLoc[11] = 0; 
@@ -1591,6 +1701,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--; 
         UpdateStones();
         document.querySelector('p').innerHTML = 'Play again';
+        checkForWinner();
         break
       case 4:
         stonesPerLoc[11] = 0;
@@ -1601,6 +1712,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--; 
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
       case 5:
         stonesPerLoc[11] = 0;
@@ -1612,6 +1724,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--; 
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
       case 6:
         stonesPerLoc[11] = 0;
@@ -1624,6 +1737,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;  
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
       case 7:
         stonesPerLoc[11] = 0;
@@ -1637,6 +1751,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
       case 8:
         stonesPerLoc[11] = 0; 
@@ -1651,6 +1766,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
       case 9:
         stonesPerLoc[11] = 0; 
@@ -1666,6 +1782,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
       case 10:
         stonesPerLoc[11] = 0; 
@@ -1682,6 +1799,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;  
         UpdateStones();
         checkLastPos(8,'player1',1);
+        checkForWinner();
         break
       case 11:
         stonesPerLoc[11] = 0;
@@ -1699,6 +1817,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         checkLastPos(9,'player1',2);
+        checkForWinner();
         break
       case 12:
         stonesPerLoc[11] = 0;
@@ -1717,6 +1836,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         checkLastPos(10,'player1',3);
+        checkForWinner();
         break
     }
   });
@@ -1729,6 +1849,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[13] = stonesPerLoc[13]+1;
         UpdateStones();
         checkLastPos(13,'player1',6);
+        checkForWinner();
         break
       case 2:
         stonesPerLoc[12] = 0;
@@ -1737,6 +1858,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--; 
         UpdateStones();
         document.querySelector('p').innerHTML = 'Play again';
+        checkForWinner();
         break
       case 3:
         stonesPerLoc[12] = 0; 
@@ -1746,6 +1868,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--; 
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
       case 4:
         stonesPerLoc[12] = 0;
@@ -1756,6 +1879,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--; 
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
       case 5:
         stonesPerLoc[12] = 0;
@@ -1767,6 +1891,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--; 
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
       case 6:
         stonesPerLoc[12] = 0;
@@ -1779,6 +1904,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;  
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
       case 7:
         stonesPerLoc[12] = 0;
@@ -1792,6 +1918,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
       case 8:
         stonesPerLoc[12] = 0; 
@@ -1806,6 +1933,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
       case 9:
         stonesPerLoc[12] = 0; 
@@ -1821,6 +1949,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         checkLastPos(8,'player1',1);
+        checkForWinner();
         break
       case 10:
         stonesPerLoc[12] = 0; 
@@ -1837,6 +1966,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;  
         UpdateStones();
         checkLastPos(9,'player1',2);
+        checkForWinner();
         break
       case 11:
         stonesPerLoc[12] = 0;
@@ -1854,6 +1984,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         checkLastPos(10,'player1',3);
+        checkForWinner();
         break
       case 12:
         stonesPerLoc[12] = 0;
@@ -1872,6 +2003,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         checkLastPos(11,'player1',4);
+        checkForWinner();
         break
     }
   });
@@ -1885,6 +2017,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--; 
         UpdateStones();
         document.querySelector('p').innerHTML = 'Play again';
+        checkForWinner();
         break
       case 2:
         stonesPerLoc[13] = 0;
@@ -1893,6 +2026,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--; 
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
       case 3:
         stonesPerLoc[13] = 0; 
@@ -1902,6 +2036,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--; 
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
       case 4:
         stonesPerLoc[13] = 0;
@@ -1912,6 +2047,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--; 
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
       case 5:
         stonesPerLoc[13] = 0;
@@ -1923,6 +2059,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--; 
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
       case 6:
         stonesPerLoc[13] = 0;
@@ -1935,6 +2072,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;  
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
       case 7:
         stonesPerLoc[13] = 0;
@@ -1948,6 +2086,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         updatePlayerDisplay('player1');
+        checkForWinner();
         break
       case 8:
         stonesPerLoc[13] = 0; 
@@ -1962,6 +2101,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         checkLastPos(8,'player1',1);
+        checkForWinner();
         break
       case 9:
         stonesPerLoc[13] = 0; 
@@ -1977,6 +2117,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         checkLastPos(9,'player1',2);
+        checkForWinner();
         break
       case 10:
         stonesPerLoc[13] = 0; 
@@ -1993,6 +2134,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;  
         UpdateStones();
         checkLastPos(10,'player1',3);
+        checkForWinner();
         break
       case 11:
         stonesPerLoc[13] = 0;
@@ -2010,6 +2152,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         checkLastPos(11,'player1',4);
+        checkForWinner();
         break
       case 12:
         stonesPerLoc[13] = 0;
@@ -2028,11 +2171,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
         total--;
         UpdateStones();
         checkLastPos(11,'player1',4);
+        checkForWinner();
         break
     }
   });
-
-  checkForWinner();
   resetBtn.addEventListener('click', (e) => {
       console.log('hello1');
       // clear all total and set initial condition
