@@ -7,26 +7,49 @@ html, body{
     text-align: center;
     background: darkgray;
 }
-header{
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
+
 main {
-    position: relative;
     display:grid;
-    grid-template-columns: 150px 150px 150px 150px 150px 150px 150px 150px;
-    grid-template-rows: 150px 150px;
+    height: max-content;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    /* 150px 150px 150px 150px 150px 150px 150px 150px; */
+    grid-template-rows: 25px 1fr 1fr 25px;
+    /* 150px 150px; */
     gap: 10px 10px;
     /* justify-items: center; */
-    align-items: center;
-    justify-content: center;
-    grid-template-areas: "mP1 p1P1 p2P1 p3P1 p4P1 p5P1 p6P1 mP2"
-                         "mP1 p1P2 p2P2 p3P2 p4P2 p5P2 p6P2 mP2";
+    /* align-items: center;
+    justify-content: center; */
+    grid-template-areas: "pl1 pl1  pl1  pl1  pl1  pl1  pl1 pl1"
+                         "mP1 p1P1 p2P1 p3P1 p4P1 p5P1 p6P1 mP2"
+                         "mP1 p1P2 p2P2 p3P2 p4P2 p5P2 p6P2 mP2"
+                         "pl2 pl2  pl2  pl2  pl2  pl2  pl2 pl2";
 }
-.game {
-    position: absolute;
-    margin-left: 30px;
+
+.player1 {
+    grid-area: pl1;
+    height: 100%;
+    width: 75%;
+    font-size: 20px;
+    margin-left: 12.5%;
+    text-align: left;
+    /* grid-column: 2;
+    grid-row: 3 / 5;
+    height: 50%;
+    font-size: 30px; */
 }
+.player2 {
+    grid-area: pl2;
+    height: 100%;
+    width: 75%;
+    font-size: 20px;
+    margin-left: 12.5%;
+    text-align: right;
+    /* grid-column: 6;
+    grid-row: 3 / 5;
+    height: 50%; 
+    font-size: 30px; */
+}
+
 .MancalaPlayer1 {
     grid-area: mP1;
     height: 100%;
@@ -34,7 +57,6 @@ main {
     background-color: antiquewhite;
     border: 2px solid black;
     font-size: 40px;
-    /* z-index: -1;    */
 }
 .pits1Player1 {
     grid-area: p1P1;
@@ -43,7 +65,6 @@ main {
     background-color: antiquewhite;
     border: 2px solid black;
     font-size: 40px;
-    /* z-index: -1;    */
 }
 .pits2Player1 {
     grid-area: p2P1;
@@ -52,7 +73,6 @@ main {
     background-color: antiquewhite;
     border: 2px solid black;
     font-size: 40px;
-    /* z-index: -1;    */
 }
 .pits3Player1 {
     grid-area: p3P1;
@@ -61,7 +81,6 @@ main {
     background-color: antiquewhite;
     border: 2px solid black;
     font-size: 40px;
-    /* z-index: -1;    */
 }
 .pits4Player1 {
     grid-area: p4P1;
@@ -70,7 +89,6 @@ main {
     background-color: antiquewhite;
     border: 2px solid black;
     font-size: 40px;
-    /* z-index: -1;    */
 }
 .pits5Player1 {
     grid-area: p5P1;
@@ -79,7 +97,6 @@ main {
     background-color: antiquewhite;
     border: 2px solid black;
     font-size: 40px;
-    /* z-index: -1;    */
 }
 .pits6Player1 {
     grid-area: p6P1;
@@ -88,7 +105,6 @@ main {
     background-color: antiquewhite;
     border: 2px solid black;
     font-size: 40px;
-    /* z-index: -1;    */
 }
 .MancalaPlayer2 {
     grid-area: mP2;
@@ -97,7 +113,6 @@ main {
     background-color: antiquewhite;
     border: 2px solid black;
     font-size: 40px;
-    /* z-index: -1;    */
 }
 .pits1Player2 {
     grid-area: p1P2;
@@ -106,7 +121,6 @@ main {
     background-color: antiquewhite;
     border: 2px solid black;
     font-size: 40px;
-    /* z-index: -1;    */
 }
 .pits2Player2 {
     grid-area: p2P2;
@@ -115,7 +129,6 @@ main {
     background-color: antiquewhite;
     border: 2px solid black;
     font-size: 40px;
-    /* z-index: -1;    */
 }
 .pits3Player2 {
     grid-area: p3P2;
@@ -124,7 +137,6 @@ main {
     background-color: antiquewhite;
     border: 2px solid black;
     font-size: 40px;
-    /* z-index: -1;    */
 }
 .pits4Player2 {
     grid-area: p4P2;
@@ -133,7 +145,6 @@ main {
     background-color: antiquewhite;
     border: 2px solid black;
     font-size: 40px;
-    /* z-index: -1;    */
 }
 .pits5Player2 {
     grid-area: p5P2;
@@ -142,7 +153,6 @@ main {
     background-color: antiquewhite;
     border: 2px solid black;
     font-size: 40px;
-    /* z-index: -1;    */
 }
 .pits6Player2 {
     grid-area: p6P2;
@@ -151,29 +161,25 @@ main {
     background-color: antiquewhite;
     border: 2px solid black;
     font-size: 40px;
-    /* z-index: -1;    */
 }
 footer {
-    height: 200px;
     display: grid;
-    grid-template-columns: 100px 150px 1fr 150px 1fr 150px 100px;
-    grid-template-rows: 1fr 50px 50px 50px 1fr;
+    grid-template-columns: 1fr 1fr 0.5fr 1fr 1fr;
+    grid-template-rows: 1fr 1frfr 1fr;
+    gap: 10px 10px;
 }
-.player1 {
-    grid-column: 2;
-    grid-row: 3 / 5;
+
+p {
+    grid-column: 3;
+    grid-row: 1 / 3;
     height: 50%;
-    font-size: 30px;
+    font-size: 20px;
+    margin-top: 20px;
 }
-.player2 {
-    grid-column: 6;
-    grid-row: 3 / 5;
-    height: 50%; 
-    font-size: 30px;
-}
+
 .player1Score{
     grid-column: 2;
-    grid-row: 2 / 5;
+    grid-row: 2 / 3;
     height: 50%;
     font-size: 20px;
     margin-top: 20px;
@@ -181,7 +187,7 @@ footer {
 }
 .player2Score{
     grid-column: 4;
-    grid-row: 2 / 5;
+    grid-row: 2 / 3;
     height: 50%;
     font-size: 20px;
     margin-top: 20px;
@@ -191,7 +197,7 @@ button {
     border: 1px solid black;
     justify-content: center;
     grid-column: 3;
-    grid-row: 4 / 5;
+    grid-row: 3 / 3;
     /* height: 70%; */
     /* width: 100%; */
     font-size: 30px;

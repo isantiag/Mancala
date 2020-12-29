@@ -46,13 +46,23 @@ function checkLastPos(lastPosition,player, oppPosition){
   setDisplay(display);
   if (stonesPerLoc[lastPosition] === 1 && stonesPerLoc[oppPosition] !== 0){
     total = total -1 - stonesPerLoc[oppPosition];
-    if (player = 'player2'){
+    if (player === 'player2'){
       document.querySelector('p').innerHTML = "Take all playing stones from your opponent's cup";
+      console.log(stonesPerLoc[0]);
+      console.log(stonesPerLoc[oppPosition]);
+      console.log(lastPosition)
+      console.log(oppPosition)
       stonesPerLoc[0] = stonesPerLoc[0] + 1 + stonesPerLoc[oppPosition];
+      console.log(stonesPerLoc[0]);
       console.log(total);  
     }else {
       document.querySelector('p').innerHTML = "Take all playing stones from your opponent's cup";
+      console.log(stonesPerLoc[7]);
+      console.log(stonesPerLoc[oppPosition]);
+      console.log(lastPosition)
+      console.log(oppPosition)
       stonesPerLoc[7] = stonesPerLoc[7] + 1 + stonesPerLoc[oppPosition];
+      console.log(stonesPerLoc[7]);
       console.log(total);
     }
     stonesPerLoc[lastPosition] = 0;
@@ -92,6 +102,26 @@ function setDisplay(display){
 
 // Check for winner
 function checkForWinner(){
+  if (stonesPerLoc[1] === 0 && stonesPerLoc[2] === 0 && stonesPerLoc[3] === 0 && stonesPerLoc[4] === 0 && stonesPerLoc[5] === 0 && stonesPerLoc[6] === 0) {
+    stonesPerLoc[7]+=total;
+    console.log('test2')
+    setStonesZero('player2');
+    UpdateStones();
+    printResult();
+  }else if (stonesPerLoc[8] === 0 && stonesPerLoc[9] === 0 && stonesPerLoc[10] === 0 && stonesPerLoc[11] === 0 && stonesPerLoc[12] === 0 && stonesPerLoc[13] === 0){
+    stonesPerLoc[0]+=total;
+    console.log('test1')
+    setStonesZero('player1');
+    UpdateStones();
+    printResult();
+  }else {
+    // game is on
+    console.log('game is on')
+  }
+  
+}
+
+function printResult(){
   if (stonesPerLoc[0] > stonesPerLoc[7]){
     player1Score++;
     document.querySelector(".player1Score").innerHTML = `Player1 Score: ${player1Score}`;  
@@ -106,6 +136,7 @@ function checkForWinner(){
     document.querySelector('p').innerHTML = 'There is a tie!';
   }
 }
+
 
 function setStonesZero(player){
   if (player === 'player1') {
@@ -127,7 +158,7 @@ function setStonesZero(player){
 
 function reset(){
   total = 48;
-  let stonesPerLoc = [0,4,4,4,4,4,4,0,4,4,4,4,4,4];
+  stonesPerLoc = [0,4,4,4,4,4,4,0,4,4,4,4,4,4];
   UpdateStones();
   display = ['player1','.player1','.player2','player2'];
   setDisplay(display);
@@ -1537,7 +1568,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
   });
 
   pos2_4.addEventListener('click', (e) =>{
-    console.log('hello')
     document.querySelector('p').innerHTML = ' ';
     switch(stonesPerLoc[11]){
       case 1:
@@ -2002,22 +2032,15 @@ document.addEventListener("DOMContentLoaded", (e) => {
     }
   });
 
-  if (stonesPerLoc[1] === 0 && stonesPerLoc[2] === 0 && stonesPerLoc[3] === 0 && stonesPerLoc[4] === 0 && stonesPerLoc[5] === 0 && stonesPerLoc[6] === 0) {
-    stonesPerLoc[7]+=total;
-    setStonesZero('player2');
-    UpdateStones();
-    checkForWinner();
-  }else if (stonesPerLoc[8] === 0 && stonesPerLoc[9] === 0 && stonesPerLoc[10] === 0 && stonesPerLoc[11] === 0 && stonesPerLoc[12] === 0 && stonesPerLoc[13] === 0){
-    stonesPerLoc[0]+=total;
-    setStonesZero('player1');
-    UpdateStones();
-    checkForWinner();
-  }
+  checkForWinner();
   resetBtn.addEventListener('click', (e) => {
+      console.log('hello1');
       // clear all total and set initial condition
       reset();
   })
 
+
+  
 });  
   
 
