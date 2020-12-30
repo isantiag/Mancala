@@ -8,7 +8,21 @@ html, body{
     background: darkgray;
 }
 
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 2fr 1fr;
+    grid-template-areas: "header"
+                         "main"
+                         "footer";
+}
+
+header {
+    grid-area: header;
+}
+
 main {
+    grid-area: main;
     display:grid;
     height: max-content;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -163,6 +177,7 @@ main {
     font-size: 40px;
 }
 footer {
+    grid-area: footer;
     display: grid;
     grid-template-columns: 1fr 1fr 0.5fr 1fr 1fr;
     grid-template-rows: 1fr 1frfr 1fr;
