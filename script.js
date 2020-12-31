@@ -16,6 +16,19 @@ let pos2_3 = 0;
 let pos2_4 = 0;
 let pos2_5 = 0;
 let pos2_6 = 0;
+let pos1_1_event;
+let pos1_2_event;
+let pos1_3_event;
+let pos1_4_event;
+let pos1_5_event;
+let pos1_6_event;
+let pos2_1_event;
+let pos2_2_event;
+let pos2_3_event;
+let pos2_4_event;
+let pos2_5_event;
+let pos2_6_event;
+let imagem;
 // stonesPerLoc = [mP1 p1P1 p2P1 p3P1 p4P1 p5P1 p6P1 mP2 p1P2 p2P2 p3P2 p4P2 p5P2 p6P2]
 let stonesPerLoc = [0,4,4,4,4,4,4,0,4,4,4,4,4,4];
 let display = ['player1','.player1','.player2','player2'];
@@ -24,21 +37,127 @@ let display = ['player1','.player1','.player2','player2'];
 // list of functions
 
 function UpdateStones(){
-  document.querySelector('.MancalaPlayer1').innerHTML = stonesPerLoc[0];
-  pos1_1.textContent = stonesPerLoc[1];
-  document.querySelector('.pits2Player1').innerHTML = stonesPerLoc[2];
-  document.querySelector('.pits3Player1').innerHTML = stonesPerLoc[3];
-  document.querySelector('.pits4Player1').innerHTML = stonesPerLoc[4];
-  document.querySelector('.pits5Player1').innerHTML = stonesPerLoc[5];
-  document.querySelector('.pits6Player1').innerHTML = stonesPerLoc[6];
-  document.querySelector('.MancalaPlayer2').innerHTML = stonesPerLoc[7];
-  document.querySelector('.pits1Player2').innerHTML = stonesPerLoc[8];
-  document.querySelector('.pits2Player2').innerHTML = stonesPerLoc[9];
-  document.querySelector('.pits3Player2').innerHTML = stonesPerLoc[10];
-  document.querySelector('.pits4Player2').innerHTML = stonesPerLoc[11];
-  document.querySelector('.pits5Player2').innerHTML = stonesPerLoc[12];
-  document.querySelector('.pits6Player2').innerHTML = stonesPerLoc[13];
+  
+  while (mPlayer1.children.length !== stonesPerLoc[0]){
+    imagem = document.createElement('img');
+    imagem.src = './marble.png';
+    imagem.width = '20';
+    mPlayer1.appendChild(imagem);
+  }
+  
+  while (pos1_1.children.length !== stonesPerLoc[1]){
+    imagem = document.createElement('img');
+    imagem.src = './marble.png';
+    imagem.width = '20';
+    pos1_1.appendChild(imagem);
+  }
+
+  while (pos1_2.children.length !== stonesPerLoc[2]){
+    imagem = document.createElement('img');
+    imagem.src = './marble.png';
+    imagem.width = '20';
+    pos1_2.appendChild(imagem);
+  }
+
+  while (pos1_3.children.length !== stonesPerLoc[3]){
+    imagem = document.createElement('img');
+    imagem.src = './marble.png';
+    imagem.width = '20';
+    pos1_3.appendChild(imagem);
+  }
+
+  while (pos1_4.children.length !== stonesPerLoc[4]){
+    imagem = document.createElement('img');
+    imagem.src = './marble.png';
+    imagem.width = '20';
+    pos1_4.appendChild(imagem);
+  }
+
+  while (pos1_5.children.length !== stonesPerLoc[5]){
+    imagem = document.createElement('img');
+    imagem.src = './marble.png';
+    imagem.width = '20';
+    pos1_5.appendChild(imagem);
+  }
+
+  while (pos1_6.children.length !== stonesPerLoc[6]){
+    imagem = document.createElement('img');
+    imagem.src = './marble.png';
+    imagem.width = '20';
+    pos1_6.appendChild(imagem);
+  }
+
+  while (mPlayer2.children.length !== stonesPerLoc[7]){
+    imagem = document.createElement('img');
+    imagem.src = './marble.png';
+    imagem.width = '20';
+    mPlayer2.appendChild(imagem);
+  }
+
+  while (pos2_1.children.length !== stonesPerLoc[8]){
+    imagem = document.createElement('img');
+    imagem.src = './marble.png';
+    imagem.width = '20';
+    pos2_1.appendChild(imagem);
+  }
+
+  while (pos2_2.children.length !== stonesPerLoc[9]){
+    imagem = document.createElement('img');
+    imagem.src = './marble.png';
+    imagem.width = '20';
+    pos2_2.appendChild(imagem);
+  }
+
+  while (pos2_3.children.length !== stonesPerLoc[10]){
+    imagem = document.createElement('img');
+    imagem.src = './marble.png';
+    imagem.width = '20';
+    pos2_3.appendChild(imagem);
+  }
+
+  while (pos2_4.children.length !== stonesPerLoc[11]){
+    imagem = document.createElement('img');
+    imagem.src = './marble.png';
+    imagem.width = '20';
+    pos2_4.appendChild(imagem);
+  }
+
+  while (pos2_5.children.length !== stonesPerLoc[12]){
+    imagem = document.createElement('img');
+    imagem.src = './marble.png';
+    imagem.width = '20';
+    pos2_5.appendChild(imagem);
+  }
+
+  while (pos2_6.children.length !== stonesPerLoc[13]){
+    imagem = document.createElement('img');
+    imagem.src = './marble.png';
+    imagem.width = '20';
+    pos2_6.appendChild(imagem);
+  }
+  // document.querySelector('.MancalaPlayer1').innerHTML = stonesPerLoc[0];
+  // pos1_1.textContent = stonesPerLoc[1];
+  // document.querySelector('.pits2Player1').innerHTML = stonesPerLoc[2];
+  // document.querySelector('.pits3Player1').innerHTML = stonesPerLoc[3];
+  // document.querySelector('.pits4Player1').innerHTML = stonesPerLoc[4];
+  // document.querySelector('.pits5Player1').innerHTML = stonesPerLoc[5];
+  // document.querySelector('.pits6Player1').innerHTML = stonesPerLoc[6];
+  // document.querySelector('.MancalaPlayer2').innerHTML = stonesPerLoc[7];
+  // document.querySelector('.pits1Player2').innerHTML = stonesPerLoc[8];
+  // document.querySelector('.pits2Player2').innerHTML = stonesPerLoc[9];
+  // document.querySelector('.pits3Player2').innerHTML = stonesPerLoc[10];
+  // document.querySelector('.pits4Player2').innerHTML = stonesPerLoc[11];
+  // document.querySelector('.pits5Player2').innerHTML = stonesPerLoc[12];
+  // document.querySelector('.pits6Player2').innerHTML = stonesPerLoc[13];
 }
+
+function removeAllChildNodes(parent) {
+  console.log('1');
+  while (parent.firstChild){
+    parent.removeChild(parent.firstChild);
+  }
+}
+
 
 // Check last position has only 1 stone
 function checkLastPos(lastPosition,player, oppPosition){
@@ -46,27 +165,41 @@ function checkLastPos(lastPosition,player, oppPosition){
   setDisplay(display);
   if (stonesPerLoc[lastPosition] === 1 && stonesPerLoc[oppPosition] !== 0){
     total = total -1 - stonesPerLoc[oppPosition];
-    if (player === 'player2'){
+    if (player === 'player1'){
       document.querySelector('p').innerHTML = "Take all playing stones from your opponent's cup";
-      console.log(stonesPerLoc[0]);
-      console.log(stonesPerLoc[oppPosition]);
-      console.log(lastPosition)
-      console.log(oppPosition)
-      stonesPerLoc[0] = stonesPerLoc[0] + 1 + stonesPerLoc[oppPosition];
-      console.log(stonesPerLoc[0]);
-      console.log(total);  
+      stonesPerLoc[7] = stonesPerLoc[7] + 1 + stonesPerLoc[oppPosition];
     }else {
       document.querySelector('p').innerHTML = "Take all playing stones from your opponent's cup";
-      console.log(stonesPerLoc[7]);
-      console.log(stonesPerLoc[oppPosition]);
-      console.log(lastPosition)
-      console.log(oppPosition)
-      stonesPerLoc[7] = stonesPerLoc[7] + 1 + stonesPerLoc[oppPosition];
-      console.log(stonesPerLoc[7]);
-      console.log(total);
+      stonesPerLoc[0] = stonesPerLoc[0] + 1 + stonesPerLoc[oppPosition];
     }
     stonesPerLoc[lastPosition] = 0;
     stonesPerLoc[oppPosition] = 0;
+    switch (true) {
+      case ((lastPosition === 1) || (lastPosition === 8)):
+        removeAllChildNodes(pos2_1);
+        removeAllChildNodes(pos1_1);
+        break
+      case ((lastPosition === 2) || (lastPosition === 9)):
+        removeAllChildNodes(pos2_2);
+        removeAllChildNodes(pos1_2);
+        break
+      case ((lastPosition === 3) || (lastPosition === 10)):
+        removeAllChildNodes(pos2_3);
+        removeAllChildNodes(pos1_3);
+        break
+      case ((lastPosition === 4) || (lastPosition === 11)):
+        removeAllChildNodes(pos2_4);
+        removeAllChildNodes(pos1_4);
+        break
+      case ((lastPosition === 5) || (lastPosition === 12)):
+        removeAllChildNodes(pos2_5);
+        removeAllChildNodes(pos1_5);
+        break
+      case ((lastPosition === 6) || (lastPosition === 13)):
+        removeAllChildNodes(pos2_6);
+        removeAllChildNodes(pos1_6);
+        break
+    }
     UpdateStones();
   }
 } 
@@ -146,6 +279,12 @@ function setStonesZero(player){
     stonesPerLoc[4] = 0;
     stonesPerLoc[5] = 0;
     stonesPerLoc[6] = 0;
+    removeAllChildNodes(pos1_1);
+    removeAllChildNodes(pos1_2);
+    removeAllChildNodes(pos1_3);
+    removeAllChildNodes(pos1_4);
+    removeAllChildNodes(pos1_5);
+    removeAllChildNodes(pos1_6);
   }else {
     stonesPerLoc[8] = 0;
     stonesPerLoc[9] = 0;
@@ -153,12 +292,20 @@ function setStonesZero(player){
     stonesPerLoc[11] = 0;
     stonesPerLoc[12] = 0;
     stonesPerLoc[13] = 0;
+    removeAllChildNodes(pos2_1);
+    removeAllChildNodes(pos2_2);
+    removeAllChildNodes(pos2_3);
+    removeAllChildNodes(pos2_4);
+    removeAllChildNodes(pos2_5);
+    removeAllChildNodes(pos2_6);
   }
 }
 
 function reset(){
   total = 48;
   stonesPerLoc = [0,4,4,4,4,4,4,0,4,4,4,4,4,4];
+  removeAllChildNodes(mPlayer1);
+  removeAllChildNodes(mPlayer2);
   UpdateStones();
   display = ['player1','.player1','.player2','player2'];
   setDisplay(display);
@@ -187,10 +334,12 @@ document.addEventListener("DOMContentLoaded", (e) => {
   document.querySelector('.player2Score').innerHTML =`Player2 Score: ${player2Score}`;
   resetBtn = document.querySelector('.reset');
   UpdateStones();
+  // placeImage(stonesPerLoc[1],pos1_1);
     
-
-  pos1_1.addEventListener('click', (e) =>{
-    document.querySelector('p').innerHTML = '';
+  
+  pos1_1_event = function (e) {
+    document.querySelector('p').innerHTML = ' ';
+    removeAllChildNodes(pos1_1);
     switch(stonesPerLoc[1]){
       case 1:
         stonesPerLoc[1] = 0;
@@ -355,11 +504,13 @@ document.addEventListener("DOMContentLoaded", (e) => {
         checkForWinner();
         break
     }
-  });
+  };
 
-  
-  pos1_2.addEventListener('click', (e) =>{
-    document.querySelector('p').innerHTML = '';
+  pos1_1.addEventListener('click', pos1_1_event);
+ 
+  pos1_2_event = function (e) {
+    document.querySelector('p').innerHTML = ' ';
+    removeAllChildNodes(pos1_2);
     switch(stonesPerLoc[2]){
       case 1:
         stonesPerLoc[2] = 0;
@@ -523,10 +674,13 @@ document.addEventListener("DOMContentLoaded", (e) => {
         checkForWinner();
         break
     }
-  });  
+  };  
  
-  pos1_3.addEventListener('click', (e) =>{
-    document.querySelector('p').innerHTML = '';
+  pos1_2.addEventListener('click', pos1_2_event);
+
+  pos1_3_event = function (e) {
+    document.querySelector('p').innerHTML = ' ';
+    removeAllChildNodes(pos1_3);
     switch(stonesPerLoc[3]){
       case 1:
         stonesPerLoc[3] = 0;
@@ -689,10 +843,13 @@ document.addEventListener("DOMContentLoaded", (e) => {
         checkForWinner();
         break
     }
-  });  
+  };  
 
-  pos1_4.addEventListener('click', (e) =>{
-    document.querySelector('p').innerHTML = '';
+  pos1_3.addEventListener('click', pos1_3_event);
+
+  pos1_4_event = function(e) {
+    document.querySelector('p').innerHTML = ' ';
+    removeAllChildNodes(pos1_4);
     switch(stonesPerLoc[4]){
       case 1:
         stonesPerLoc[4] = 0;
@@ -854,10 +1011,13 @@ document.addEventListener("DOMContentLoaded", (e) => {
         checkForWinner();
         break
     }
-  });  
+  };  
 
-  pos1_5.addEventListener('click', (e) =>{
-    document.querySelector('p').innerHTML = '';
+  pos1_4.addEventListener('click', pos1_4_event);
+
+  pos1_5_event = function(e) {
+    document.querySelector('p').innerHTML = ' ';
+    removeAllChildNodes(pos1_5);
     switch(stonesPerLoc[5]){
       case 1:
         stonesPerLoc[5] = 0;
@@ -1018,10 +1178,13 @@ document.addEventListener("DOMContentLoaded", (e) => {
         checkForWinner();
         break
     }
-  }); 
+  }; 
 
-  pos1_6.addEventListener('click', (e) =>{
-    document.querySelector('p').innerHTML = '';
+  pos1_5.addEventListener('click', pos1_5_event);
+
+  pos1_6_event = function(e) {
+    document.querySelector('p').innerHTML = ' ';
+    removeAllChildNodes(pos1_6);
     switch(stonesPerLoc[6]){
       case 1:
         stonesPerLoc[6] = 0;
@@ -1181,10 +1344,13 @@ document.addEventListener("DOMContentLoaded", (e) => {
         checkForWinner();
         break
     }
-  }); 
+  }; 
  
-  pos2_1.addEventListener('click', (e) =>{
-    document.querySelector('p').innerHTML = '';
+  pos1_6.addEventListener('click', pos1_6_event);
+
+  pos2_1_event = function (e) {
+    document.querySelector('p').innerHTML = ' ';
+    removeAllChildNodes(pos2_1);
     switch(stonesPerLoc[8]){
       case 1:
         stonesPerLoc[8] = 0;
@@ -1344,10 +1510,13 @@ document.addEventListener("DOMContentLoaded", (e) => {
         checkForWinner();
         break
     }
-  });
+  };
 
-  pos2_2.addEventListener('click', (e) =>{
-    document.querySelector('p').innerHTML = '';
+  pos2_1.addEventListener('click', pos2_1_event);
+
+  pos2_2_event = function(e) {
+    document.querySelector('p').innerHTML = ' ';
+    removeAllChildNodes(pos2_2);
     switch(stonesPerLoc[9]){
       case 1:
         stonesPerLoc[9] = 0;
@@ -1508,10 +1677,13 @@ document.addEventListener("DOMContentLoaded", (e) => {
         checkForWinner();
         break
     }
-  });
+  };
 
-  pos2_3.addEventListener('click', (e) =>{
+  pos2_2.addEventListener('click', pos2_2_event);
+  
+  pos2_3_event = function (e) {
     document.querySelector('p').innerHTML = ' ';
+    removeAllChildNodes(pos2_3);
     switch(stonesPerLoc[10]){
       case 1:
         stonesPerLoc[10] = 0;
@@ -1673,10 +1845,13 @@ document.addEventListener("DOMContentLoaded", (e) => {
         checkForWinner();
         break
     }
-  });
+  };
 
-  pos2_4.addEventListener('click', (e) =>{
+  pos2_3.addEventListener('click', pos2_3_event);
+  
+  pos2_4_event = function(e) {
     document.querySelector('p').innerHTML = ' ';
+    removeAllChildNodes(pos2_4);
     switch(stonesPerLoc[11]){
       case 1:
         stonesPerLoc[11] = 0;
@@ -1839,10 +2014,13 @@ document.addEventListener("DOMContentLoaded", (e) => {
         checkForWinner();
         break
     }
-  });
+  };
 
-  pos2_5.addEventListener('click', (e) =>{
-    document.querySelector('p').innerHTML = '';
+  pos2_4.addEventListener('click', pos2_4_event);
+  
+  pos2_5_event = function(e) {
+    document.querySelector('p').innerHTML = ' ';
+    removeAllChildNodes(pos2_5);
     switch(stonesPerLoc[12]){
       case 1:
         stonesPerLoc[12] = 0;
@@ -2006,10 +2184,13 @@ document.addEventListener("DOMContentLoaded", (e) => {
         checkForWinner();
         break
     }
-  });
+  };
 
-  pos2_6.addEventListener('click', (e) =>{
-    document.querySelector('p').innerHTML = '';
+  pos2_5.addEventListener('click', pos2_5_event);
+  
+  pos2_6_event = function(e) {
+    document.querySelector('p').innerHTML = ' ';
+    removeAllChildNodes(pos2_6);
     switch(stonesPerLoc[13]){
       case 1:
         stonesPerLoc[13] = 0;
@@ -2174,7 +2355,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
         checkForWinner();
         break
     }
-  });
+  };
+
+  pos2_6.addEventListener('click', pos2_6_event);
+
   resetBtn.addEventListener('click', (e) => {
       console.log('hello1');
       // clear all total and set initial condition

@@ -24,10 +24,12 @@ header {
 main {
     grid-area: main;
     display:grid;
-    height: max-content;
+    max-width: 1270px;
+    justify-items: center;
+    /* height: max-content; */
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     /* 150px 150px 150px 150px 150px 150px 150px 150px; */
-    grid-template-rows: 25px 1fr 1fr 25px;
+    grid-template-rows: 25px 150px 150px 25px;
     /* 150px 150px; */
     gap: 10px 10px;
     /* justify-items: center; */
