@@ -5,29 +5,46 @@ html, body{
     margin: 0;
     padding: 0;
     text-align: center;
-    background: darkgray;
+    /* background-image: url('https://images.pexels.com/photos/82256/pexels-photo-82256.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'); */
+    background:#999999;
 }
 
 body {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     grid-template-columns: 1fr;
-    grid-template-rows: 2fr 2fr 1fr;
+    grid-template-rows: 2fr 0.5fr 2fr 1fr;
     grid-template-areas: "header"
+                         "li"
                          "main"
                          "footer";
 }
 
 header {
     grid-area: header;
+    border: 1px solid black;
+}
+
+li {
+    grid-area: li;
+    display: inline-block;
+    font-size: 25px;
+    cursor: pointer;
+    /* flex-direction: column; */
+    /* justify-content: space-around; */
+    border: 1px solid black;
+    /* padding: "40px"; */
 }
 
 main {
     grid-area: main;
     display:grid;
-    max-width: 1270px;
+    /* max-width: 1270px; */
     justify-items: center;
     /* height: max-content; */
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 150px 150px 150px 150px 150px 150px 150px 150px 1fr; 
+    /* 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
     /* 150px 150px 150px 150px 150px 150px 150px 150px; */
     grid-template-rows: 25px 150px 150px 25px;
     /* 150px 150px; */
@@ -35,10 +52,10 @@ main {
     /* justify-items: center; */
     /* align-items: center;
     justify-content: center; */
-    grid-template-areas: "pl1 pl1  pl1  pl1  pl1  pl1  pl1 pl1"
-                         "mP1 p1P1 p2P1 p3P1 p4P1 p5P1 p6P1 mP2"
-                         "mP1 p1P2 p2P2 p3P2 p4P2 p5P2 p6P2 mP2"
-                         "pl2 pl2  pl2  pl2  pl2  pl2  pl2 pl2";
+    grid-template-areas: "left pl1 pl1  pl1  pl1  pl1  pl1  pl1 pl1 right"
+                         "left mP1 p1P1 p2P1 p3P1 p4P1 p5P1 p6P1 mP2 right"
+                         "left mP1 p1P2 p2P2 p3P2 p4P2 p5P2 p6P2 mP2 right"
+                         "left pl2 pl2  pl2  pl2  pl2  pl2  pl2 pl2 right";
 }
 
 .player1 {
@@ -46,8 +63,9 @@ main {
     height: 100%;
     width: 75%;
     font-size: 20px;
-    margin-left: 12.5%;
+    /* margin-left: 12.5%; */
     text-align: left;
+    color: red;
     /* grid-column: 2;
     grid-row: 3 / 5;
     height: 50%;
@@ -58,8 +76,9 @@ main {
     height: 100%;
     width: 75%;
     font-size: 20px;
-    margin-left: 12.5%;
+    /* margin-left: 12.5%; */
     text-align: right;
+    color: red;
     /* grid-column: 6;
     grid-row: 3 / 5;
     height: 50%; 
@@ -177,6 +196,12 @@ main {
     background-color: antiquewhite;
     border: 2px solid black;
     font-size: 40px;
+}
+.left {
+    grid-area: left;
+}
+.right {
+    grid-area: right;
 }
 footer {
     grid-area: footer;

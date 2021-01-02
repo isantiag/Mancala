@@ -1,7 +1,9 @@
 // list of variables
-let total = 48;
 let player1Score = 0;
 let player2Score = 0;
+// Total number of marbles in the board, except the stores
+let total = 48; 
+// Board positions
 let mPlayer1;
 let mPlayer2;
 let pos1_1 = 0;
@@ -16,6 +18,7 @@ let pos2_3 = 0;
 let pos2_4 = 0;
 let pos2_5 = 0;
 let pos2_6 = 0;
+// Functions for click event listener
 let pos1_1_event;
 let pos1_2_event;
 let pos1_3_event;
@@ -28,10 +31,23 @@ let pos2_3_event;
 let pos2_4_event;
 let pos2_5_event;
 let pos2_6_event;
+// Represent the marbles
 let imagem;
+// Variable created to indicate player 2 or computer. The default is player 2.
+let player = 'player2';
+// Selection for 1 or 2 players
+let onePlayer;
+let twoPlayers;
+// It will be used to open an instruction box
+let hToPlay;
 // stonesPerLoc = [mP1 p1P1 p2P1 p3P1 p4P1 p5P1 p6P1 mP2 p1P2 p2P2 p3P2 p4P2 p5P2 p6P2]
 let stonesPerLoc = [0,4,4,4,4,4,4,0,4,4,4,4,4,4];
-let display = ['player1','.player1','.player2','player2'];
+// It is used to display the player turn
+let display = ['Player1 Turn','.player1','.player2','Player2 Turn'];
+// Variable created to select the paragrah from html
+let p;
+// Set timeout to clear 'Capture' or 'Play again' message.
+let time;
 
 
 // list of functions
@@ -152,12 +168,10 @@ function UpdateStones(){
 }
 
 function removeAllChildNodes(parent) {
-  console.log('1');
   while (parent.firstChild){
     parent.removeChild(parent.firstChild);
   }
 }
-
 
 // Check last position has only 1 stone
 function checkLastPos(lastPosition,player, oppPosition){
@@ -166,10 +180,12 @@ function checkLastPos(lastPosition,player, oppPosition){
   if (stonesPerLoc[lastPosition] === 1 && stonesPerLoc[oppPosition] !== 0){
     total = total -1 - stonesPerLoc[oppPosition];
     if (player === 'player1'){
-      document.querySelector('p').innerHTML = "Take all playing stones from your opponent's cup";
+      p.textContent = "CAPTURE";
+      time = setTimeout(clearMessage,2000);
       stonesPerLoc[7] = stonesPerLoc[7] + 1 + stonesPerLoc[oppPosition];
     }else {
-      document.querySelector('p').innerHTML = "Take all playing stones from your opponent's cup";
+      p.textContent = "CAPTURE";
+      time = setTimeout(clearMessage,2000);
       stonesPerLoc[0] = stonesPerLoc[0] + 1 + stonesPerLoc[oppPosition];
     }
     stonesPerLoc[lastPosition] = 0;
@@ -204,6 +220,11 @@ function checkLastPos(lastPosition,player, oppPosition){
   }
 } 
 
+// Clear message
+function clearMessage(){
+  p.textContent = ' ';
+}
+
 // Update player and display
 function updatePlayerDisplay(player){
   setPlayer(player);
@@ -213,15 +234,44 @@ function updatePlayerDisplay(player){
 // Set player
 function setPlayer(player) {
   if (player === 'player1'){
-    display[0] = 'player1';
+    display[0] = 'Player1 Turn';
     display[1] = '.player1';
     display[2] = '.player2'
-    display[3] = 'player2';
-  }else {
-    display[0] = 'player2';
+    display[3] = 'Player2 Turn';
+    pos1_1.addEventListener('click', pos1_1_event);
+    pos1_2.addEventListener('click', pos1_2_event);
+    pos1_3.addEventListener('click', pos1_3_event);
+    pos1_4.addEventListener('click', pos1_4_event);
+    pos1_5.addEventListener('click', pos1_5_event);
+    pos1_6.addEventListener('click', pos1_6_event);
+    pos2_1.removeEventListener('click',pos2_1_event);
+    pos2_2.removeEventListener('click',pos2_2_event);
+    pos2_3.removeEventListener('click',pos2_3_event);
+    pos2_4.removeEventListener('click',pos2_4_event);
+    pos2_5.removeEventListener('click',pos2_5_event);
+    pos2_6.removeEventListener('click',pos2_6_event);
+  }else if (player === 'player2'){
+    display[0] = 'Player2 Turn';
     display[1] = '.player2';
     display[2] = '.player1'
-    display[3] = 'player1';
+    display[3] = 'Player1 Turn';
+    pos1_1.removeEventListener('click',pos1_1_event);
+    pos1_2.removeEventListener('click',pos1_2_event);
+    pos1_3.removeEventListener('click',pos1_3_event);
+    pos1_4.removeEventListener('click',pos1_4_event);
+    pos1_5.removeEventListener('click',pos1_5_event);
+    pos1_6.removeEventListener('click',pos1_6_event);
+    pos2_1.addEventListener('click', pos2_1_event);
+    pos2_2.addEventListener('click', pos2_2_event);
+    pos2_3.addEventListener('click', pos2_3_event);
+    pos2_4.addEventListener('click', pos2_4_event);
+    pos2_5.addEventListener('click', pos2_5_event);
+    pos2_6.addEventListener('click', pos2_6_event);
+  }else {
+    display[0] = 'Computer Turn';
+    display[1] = '.player2';
+    display[2] = '.player1'
+    display[3] = 'Player1 Turn';
   }
 }
 
@@ -237,13 +287,11 @@ function setDisplay(display){
 function checkForWinner(){
   if (stonesPerLoc[1] === 0 && stonesPerLoc[2] === 0 && stonesPerLoc[3] === 0 && stonesPerLoc[4] === 0 && stonesPerLoc[5] === 0 && stonesPerLoc[6] === 0) {
     stonesPerLoc[7]+=total;
-    console.log('test2')
     setStonesZero('player2');
     UpdateStones();
     printResult();
   }else if (stonesPerLoc[8] === 0 && stonesPerLoc[9] === 0 && stonesPerLoc[10] === 0 && stonesPerLoc[11] === 0 && stonesPerLoc[12] === 0 && stonesPerLoc[13] === 0){
     stonesPerLoc[0]+=total;
-    console.log('test1')
     setStonesZero('player1');
     UpdateStones();
     printResult();
@@ -258,15 +306,15 @@ function printResult(){
   if (stonesPerLoc[0] > stonesPerLoc[7]){
     player1Score++;
     document.querySelector(".player1Score").innerHTML = `Player1 Score: ${player1Score}`;  
-    document.querySelector('p').innerHTML = 'Player 1 is the winner!';
+    p.textContent = 'Player 1 is the winner!';
   }else if (stonesPerLoc[0] < stonesPerLoc[7]){
     player2Score++;
     document.querySelector(".player2Score").innerHTML = `Player2 Score: ${player2Score}`;
-    document.querySelector('p').innerHTML = 'Player 2 is the winner!';
+    p.textContent = 'Player 2 is the winner!';
   }else {
     console.log('tie')
     console.log(total)
-    document.querySelector('p').innerHTML = 'There is a tie!';
+    p.textContent = 'There is a tie!';
   }
 }
 
@@ -305,11 +353,24 @@ function reset(){
   total = 48;
   stonesPerLoc = [0,4,4,4,4,4,4,0,4,4,4,4,4,4];
   removeAllChildNodes(mPlayer1);
+  removeAllChildNodes(pos1_1);
+  removeAllChildNodes(pos1_2);
+  removeAllChildNodes(pos1_3);
+  removeAllChildNodes(pos1_4);
+  removeAllChildNodes(pos1_5);
+  removeAllChildNodes(pos1_6);
   removeAllChildNodes(mPlayer2);
+  removeAllChildNodes(pos2_1);
+  removeAllChildNodes(pos2_2);
+  removeAllChildNodes(pos2_3);
+  removeAllChildNodes(pos2_4);
+  removeAllChildNodes(pos2_5);
+  removeAllChildNodes(pos2_6);
   UpdateStones();
-  display = ['player1','.player1','.player2','player2'];
+  display = ['Player1 Turn','.player1','.player2',player];
+  updatePlayerDisplay('player1')
   setDisplay(display);
-  document.querySelector('p').innerHTML ="";
+  p.textContent =' ';
 }
 
 // Page loads
@@ -329,23 +390,38 @@ document.addEventListener("DOMContentLoaded", (e) => {
   pos2_4 = document.querySelector('.pits4Player2');
   pos2_5 = document.querySelector('.pits5Player2');
   pos2_6 = document.querySelector('.pits6Player2');
+  onePlayer = document.querySelector('.onePlayer');
+  twoPlayers = document.querySelector('.twoPlayers');
+  hToPlay = document.querySelector('.hToPlay');
+  p = document.querySelector('p');
   document.querySelector('.player1').style.border = "1px solid black";
   document.querySelector('.player1Score').innerHTML =`Player1 Score: ${player1Score}`;
   document.querySelector('.player2Score').innerHTML =`Player2 Score: ${player2Score}`;
   resetBtn = document.querySelector('.reset');
   UpdateStones();
-  // placeImage(stonesPerLoc[1],pos1_1);
-    
   
+    
+  onePlayer.addEventListener('click', (e) =>{
+    console.log('1player')
+  });
+
+  twoPlayers.addEventListener('click', (e) =>{
+    console.log('2players')
+  });
+
+  hToPlay.addEventListener('click', (e) =>{
+    console.log('Instruction')
+  });
+
   pos1_1_event = function (e) {
-    document.querySelector('p').innerHTML = ' ';
+    p.textContent = ' ';
     removeAllChildNodes(pos1_1);
     switch(stonesPerLoc[1]){
       case 1:
         stonesPerLoc[1] = 0;
         stonesPerLoc[0] = stonesPerLoc[0]+1;
         total--; 
-        document.querySelector('p').innerHTML = 'Play again';
+        p.textContent = 'Play again';
         UpdateStones();
         checkForWinner();
         break
@@ -355,7 +431,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[8] = stonesPerLoc[8]+1; 
         total-- ;
         UpdateStones();
-        updatePlayerDisplay('player2');
+        updatePlayerDisplay(player);
         checkForWinner();
         break
       case 3:
@@ -365,7 +441,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[9] = stonesPerLoc[9]+1; 
         total--;
         UpdateStones();
-        updatePlayerDisplay('player2');
+        updatePlayerDisplay(player);
         checkForWinner();
         break
       case 4:
@@ -376,7 +452,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[10] = stonesPerLoc[10]+1; 
         total--;
         UpdateStones();
-        updatePlayerDisplay('player2');
+        updatePlayerDisplay(player);
         checkForWinner();
         break
       case 5:
@@ -388,7 +464,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[11] = stonesPerLoc[11]+1; 
         total--; 
         UpdateStones();
-        updatePlayerDisplay('player2');
+        updatePlayerDisplay(player);
         checkForWinner();
         break
       case 6:
@@ -401,7 +477,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[12] = stonesPerLoc[12]+1;
         total--;  
         UpdateStones();
-        updatePlayerDisplay('player2');
+        updatePlayerDisplay(player);
         checkForWinner();
         break
       case 7:
@@ -415,7 +491,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[13] = stonesPerLoc[13]+1; 
         total--;
         UpdateStones();
-        updatePlayerDisplay('player2');
+        updatePlayerDisplay(player);
         checkForWinner();
         break
       case 8:
@@ -430,7 +506,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[6] = stonesPerLoc[6]+1; 
         total--;
         UpdateStones();
-        checkLastPos(6,'player2',13);
+        checkLastPos(6,player,13);
         checkForWinner();
         break
       case 9:
@@ -446,7 +522,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[5] = stonesPerLoc[5]+1; 
         total--;
         UpdateStones();
-        checkLastPos(5,'player2',12);
+        checkLastPos(5,player,12);
         checkForWinner();
         break
       case 10:
@@ -463,7 +539,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[4] = stonesPerLoc[4]+1;
         total--;  
         UpdateStones();
-        checkLastPos(4,'player2',11);
+        checkLastPos(4,player,11);
         checkForWinner();
         break
       case 11:
@@ -481,7 +557,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[3] = stonesPerLoc[3]+1;
         total--;
         UpdateStones();
-        checkLastPos(3,'player2',10);
+        checkLastPos(3,player,10);
         checkForWinner();
         break
       case 12:
@@ -500,16 +576,16 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[2] = stonesPerLoc[2]+1; 
         total--;
         UpdateStones();
-        checkLastPos(2,'player2',9);
+        checkLastPos(2,player,9);
         checkForWinner();
         break
     }
   };
 
-  pos1_1.addEventListener('click', pos1_1_event);
+  // pos1_1.addEventListener('click', pos1_1_event);
  
   pos1_2_event = function (e) {
-    document.querySelector('p').innerHTML = ' ';
+    p.textContent = ' ';
     removeAllChildNodes(pos1_2);
     switch(stonesPerLoc[2]){
       case 1:
@@ -525,7 +601,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[0] = stonesPerLoc[0]+1; 
         total-- ;
         UpdateStones();
-        document.querySelector('p').innerHTML = 'Play again';
+        p.textContent = 'Play again';
         checkForWinner();
         break
       case 3:
@@ -676,10 +752,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
     }
   };  
  
-  pos1_2.addEventListener('click', pos1_2_event);
+  // pos1_2.addEventListener('click', pos1_2_event);
 
   pos1_3_event = function (e) {
-    document.querySelector('p').innerHTML = ' ';
+    p.textContent = ' ';
     removeAllChildNodes(pos1_3);
     switch(stonesPerLoc[3]){
       case 1:
@@ -704,7 +780,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[0] = stonesPerLoc[0]+1; 
         total--;
         UpdateStones();
-        document.querySelector('p').innerHTML = 'Play again';
+        p.textContent = 'Play again';
         checkForWinner();
         break
       case 4:
@@ -845,10 +921,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
     }
   };  
 
-  pos1_3.addEventListener('click', pos1_3_event);
+  // pos1_3.addEventListener('click', pos1_3_event);
 
   pos1_4_event = function(e) {
-    document.querySelector('p').innerHTML = ' ';
+    p.textContent = ' ';
     removeAllChildNodes(pos1_4);
     switch(stonesPerLoc[4]){
       case 1:
@@ -883,7 +959,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[0] = stonesPerLoc[0]+1;
         total--;
         UpdateStones();
-        document.querySelector('p').innerHTML = 'Play again';
+        p.textContent = 'Play again';
         checkForWinner();
         break
       case 5:
@@ -1013,10 +1089,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
     }
   };  
 
-  pos1_4.addEventListener('click', pos1_4_event);
+  // pos1_4.addEventListener('click', pos1_4_event);
 
   pos1_5_event = function(e) {
-    document.querySelector('p').innerHTML = ' ';
+    p.textContent = ' ';
     removeAllChildNodes(pos1_5);
     switch(stonesPerLoc[5]){
       case 1:
@@ -1062,7 +1138,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[0] = stonesPerLoc[0]+1; 
         total--; 
         UpdateStones();
-        document.querySelector('p').innerHTML = 'Play again';
+        p.textContent = 'Play again';
         checkForWinner();
         break
       case 6:
@@ -1180,10 +1256,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
     }
   }; 
 
-  pos1_5.addEventListener('click', pos1_5_event);
+  // pos1_5.addEventListener('click', pos1_5_event);
 
   pos1_6_event = function(e) {
-    document.querySelector('p').innerHTML = ' ';
+    p.textContent = ' ';
     removeAllChildNodes(pos1_6);
     switch(stonesPerLoc[6]){
       case 1:
@@ -1241,7 +1317,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[0] = stonesPerLoc[0]+1; 
         total--;  
         UpdateStones();
-        document.querySelector('p').innerHTML = 'Play again';
+        p.textContent = 'Play again';
         checkForWinner();
         break
       case 7:
@@ -1346,10 +1422,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
     }
   }; 
  
-  pos1_6.addEventListener('click', pos1_6_event);
+  // pos1_6.addEventListener('click', pos1_6_event);
 
   pos2_1_event = function (e) {
-    document.querySelector('p').innerHTML = ' ';
+    p.textContent = ' ';
     removeAllChildNodes(pos2_1);
     switch(stonesPerLoc[8]){
       case 1:
@@ -1407,7 +1483,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[7] = stonesPerLoc[7]+1;
         total--;  
         UpdateStones();
-        document.querySelector('p').innerHTML = 'Play again';
+        p.textContent = 'Play again';
         checkForWinner();
         break
       case 7:
@@ -1512,10 +1588,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
     }
   };
 
-  pos2_1.addEventListener('click', pos2_1_event);
+  // pos2_1.addEventListener('click', pos2_1_event);
 
   pos2_2_event = function(e) {
-    document.querySelector('p').innerHTML = ' ';
+    p.textContent = ' ';
     removeAllChildNodes(pos2_2);
     switch(stonesPerLoc[9]){
       case 1:
@@ -1561,7 +1637,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[7] = stonesPerLoc[7]+1; 
         total--; 
         UpdateStones();
-        document.querySelector('p').innerHTML = 'Play again';
+        p.textContent = 'Play again';
         checkForWinner();
         break
       case 6:
@@ -1679,10 +1755,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
     }
   };
 
-  pos2_2.addEventListener('click', pos2_2_event);
+  // pos2_2.addEventListener('click', pos2_2_event);
   
   pos2_3_event = function (e) {
-    document.querySelector('p').innerHTML = ' ';
+    p.textContent = ' ';
     removeAllChildNodes(pos2_3);
     switch(stonesPerLoc[10]){
       case 1:
@@ -1717,7 +1793,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[7] = stonesPerLoc[7]+1; 
         total--; 
         UpdateStones();
-        document.querySelector('p').innerHTML = 'Play again';
+        p.textContent = 'Play again';
         checkForWinner();
         break
       case 5:
@@ -1847,10 +1923,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
     }
   };
 
-  pos2_3.addEventListener('click', pos2_3_event);
+  // pos2_3.addEventListener('click', pos2_3_event);
   
   pos2_4_event = function(e) {
-    document.querySelector('p').innerHTML = ' ';
+    p.textContent = ' ';
     removeAllChildNodes(pos2_4);
     switch(stonesPerLoc[11]){
       case 1:
@@ -1875,7 +1951,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[7] = stonesPerLoc[7]+1; 
         total--; 
         UpdateStones();
-        document.querySelector('p').innerHTML = 'Play again';
+        p.textContent = 'Play again';
         checkForWinner();
         break
       case 4:
@@ -2016,10 +2092,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
     }
   };
 
-  pos2_4.addEventListener('click', pos2_4_event);
+  // pos2_4.addEventListener('click', pos2_4_event);
   
   pos2_5_event = function(e) {
-    document.querySelector('p').innerHTML = ' ';
+    p.textContent = ' ';
     removeAllChildNodes(pos2_5);
     switch(stonesPerLoc[12]){
       case 1:
@@ -2035,7 +2111,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[7] = stonesPerLoc[7]+1; 
         total--; 
         UpdateStones();
-        document.querySelector('p').innerHTML = 'Play again';
+        p.textContent = 'Play again';
         checkForWinner();
         break
       case 3:
@@ -2186,10 +2262,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
     }
   };
 
-  pos2_5.addEventListener('click', pos2_5_event);
+  // pos2_5.addEventListener('click', pos2_5_event);
   
   pos2_6_event = function(e) {
-    document.querySelector('p').innerHTML = ' ';
+    p.textContent = ' ';
     removeAllChildNodes(pos2_6);
     switch(stonesPerLoc[13]){
       case 1:
@@ -2197,7 +2273,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         stonesPerLoc[7] = stonesPerLoc[7]+1;
         total--; 
         UpdateStones();
-        document.querySelector('p').innerHTML = 'Play again';
+        p.textContent = 'Play again';
         checkForWinner();
         break
       case 2:
@@ -2357,7 +2433,45 @@ document.addEventListener("DOMContentLoaded", (e) => {
     }
   };
 
-  pos2_6.addEventListener('click', pos2_6_event);
+  // pos2_6.addEventListener('click', pos2_6_event);
+
+  pos1_1.addEventListener('click', pos1_1_event);
+  pos1_2.addEventListener('click', pos1_2_event);
+  pos1_3.addEventListener('click', pos1_3_event);
+  pos1_4.addEventListener('click', pos1_4_event);
+  pos1_5.addEventListener('click', pos1_5_event);
+  pos1_6.addEventListener('click', pos1_6_event);
+
+  // if (display[0] === 'Player1 Turn'){
+  //   console.log('1');
+  //   pos1_1.addEventListener('click', pos1_1_event);
+  //   pos1_2.addEventListener('click', pos1_2_event);
+  //   pos1_3.addEventListener('click', pos1_3_event);
+  //   pos1_4.addEventListener('click', pos1_4_event);
+  //   pos1_5.addEventListener('click', pos1_5_event);
+  //   pos1_6.addEventListener('click', pos1_6_event);
+  //   pos2_1.removeEventListener('click',pos2_1_event);
+  //   pos2_2.removeEventListener('click',pos2_2_event);
+  //   pos2_3.removeEventListener('click',pos2_3_event);
+  //   pos2_4.removeEventListener('click',pos2_4_event);
+  //   pos2_5.removeEventListener('click',pos2_5_event);
+  //   pos2_6.removeEventListener('click',pos2_6_event);
+  // } 
+  // if (player === 'player2') {
+    // console.log('2');
+    // pos1_1.removeEventListener('click',pos1_1_event);
+    // pos1_2.removeEventListener('click',pos1_2_event);
+    // pos1_3.removeEventListener('click',pos1_3_event);
+    // pos1_4.removeEventListener('click',pos1_4_event);
+    // pos1_5.removeEventListener('click',pos1_5_event);
+    // pos1_6.removeEventListener('click',pos1_6_event);
+    // pos2_1.addEventListener('click', pos2_1_event);
+    // pos2_2.addEventListener('click', pos2_2_event);
+    // pos2_3.addEventListener('click', pos2_3_event);
+    // pos2_4.addEventListener('click', pos2_4_event);
+    // pos2_5.addEventListener('click', pos2_5_event);
+    // pos2_6.addEventListener('click', pos2_6_event);
+  // }
 
   resetBtn.addEventListener('click', (e) => {
       console.log('hello1');
