@@ -17,8 +17,8 @@ In this application, I used HTML, CSS and vanilla Javascript.
 
 ---
 
-## Wireframes
-
+## Wireframe
+![Image of wireframe](Wireframe_project1.png)
 
 ---
 
@@ -29,8 +29,9 @@ Build Mancala bord using HTML element and basic styling with CSS. After that bui
 
 ## Stretch Goals
 My first stretch goal was to replace the representation of the quantity of marbles from numbers to image.
+My next objective was to make available the game for 1 player.
 
 ---
 
 ## Any roadblocks
-Time limitation - I needed to use the time wisely since my kids were in vacation and I needed to give attention to them.
+Time available to invest in the project was limited. 

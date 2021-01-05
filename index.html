@@ -1,46 +1,73 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mancala</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <h1>Mancala</h1>
         <ul>
-            <li class="hToPlay">How to Play</li>
             <li class="onePlayer">1 Player</li>
             <li class="twoPlayers">2 Players</li>
         </ul>
     </header>
     <main>
-        <div class='MancalaPlayer1'></div>
-        <div class='pits1Player1'></div>
-        <div class='pits2Player1'></div>
-        <div class='pits3Player1'></div>
-        <div class='pits4Player1'></div>
-        <div class='pits5Player1'></div>
-        <div class='pits6Player1'></div>
-        <div class='MancalaPlayer2'></div>
-        <div class='pits1Player2'></div>
-        <div class='pits2Player2'></div>
-        <div class='pits3Player2'></div>
-        <div class='pits4Player2'></div>
-        <div class='pits5Player2'></div>
-        <div class='pits6Player2'></div>
-        <div class='player1'>Player1 Turn</div>
-        <div class='player2'></div>
-        <div class='left'></div>
-        <div class='right'></div>
+        <div class="MancalaPlayer1"></div>
+        <div class="pits1Player1"></div>
+        <div class="pits2Player1"></div>
+        <div class="pits3Player1"></div>
+        <div class="pits4Player1"></div>
+        <div class="pits5Player1"></div>
+        <div class="pits6Player1"></div>
+        <div class="MancalaPlayer2"></div>
+        <div class="pits1Player2"></div>
+        <div class="pits2Player2"></div>
+        <div class="pits3Player2"></div>
+        <div class="pits4Player2"></div>
+        <div class="pits5Player2"></div>
+        <div class="pits6Player2"></div>
+        <div class="player1">Player1 Turn</div>
+        <div class="player2"></div>
+        <div class="gameResult"></div>
+        <div class="left"></div>
+        <div class="right"></div>
     </main>
-    <footer>
+    <section>
         <p></p>
-        <div class='player1Score'>Player1 Score:</div>
-        <div class='player2Score'>Player2 Score:</div>
-        <button class='reset'>Reset</button>
+        <div class="player1Score">Player1 Score:</div>
+        <div class="player2Score">Player2 Score:</div>
+        <button class="reset">Reset</button>
+    </section>
+    <footer>
+        <div class="hToPlay"> How to Play </div>
+        <!-- The Modal -->
+        <div class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>
+                    This game supports one or two players. When the webpage is loaded, two players are considered by default. In case you want
+                    to select one player, please click "1Player" on the header of the webpage. In any time, the game is changed from 1player to 2players
+                    or vise-versa, the players scores are clear. The program supports up to 12 marbles in each individual pit.
+                    The pits from player 1 is in the top of the board, while for player2/computer is in the botton. Note that store for player 1 is on 
+                    the left and for player2/computer is on right side.
+                    The player chooses one of the pits in his/her side. The program automatically updated the number of marbles following the rules below:
+                    If you run into your own store, one marble is deposited in your store. 
+                    If you run into your opponet"s store, skip it and continue moving to next pit.
+                    If the last marble you drop in your own store, you take another turn.
+                    If the last marble you drop is an empty pit on your side, you capture that marble and any marble in the opposite pit and place in your store. 
+                    If the last marble you drop is not either one condition above, next player turns.
+                    The game ends when all six pits on one side of Mancala board are empty.
+                    The player who still has marbles on his/her side of the board when the game ends captures all of those marbles.
+                    The winner is the player with the most marbles.
+                </p>
+            </div>
     </footer>
 </body>
 </html>

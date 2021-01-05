@@ -5,57 +5,61 @@ html, body{
     margin: 0;
     padding: 0;
     text-align: center;
-    /* background-image: url('https://images.pexels.com/photos/82256/pexels-photo-82256.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'); */
-    background:#999999;
+    background:white;
+    font-family: "Montserrat Alternates", sans-serif;
 }
 
 body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    height: 100vh;
+    width: 100vw;
     grid-template-columns: 1fr;
-    grid-template-rows: 2fr 0.5fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas: "header"
                          "li"
                          "main"
+                         "section"
                          "footer";
+}
+
+h1 {
+    font-size: 40px;
 }
 
 header {
     grid-area: header;
-    border: 1px solid black;
+    height: 150px;
+    color: white;
+    align-items: flex-end;
+    background-image: url("https://images.pexels.com/photos/3745234/pexels-photo-3745234.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
 }
+
 
 li {
     grid-area: li;
     display: inline-block;
-    font-size: 25px;
+    font-size: 20px;
     cursor: pointer;
-    /* flex-direction: column; */
-    /* justify-content: space-around; */
-    border: 1px solid black;
-    /* padding: "40px"; */
 }
 
 main {
     grid-area: main;
     display:grid;
-    /* max-width: 1270px; */
+    margin-top: 10px;
+    height: 310px;
     justify-items: center;
-    /* height: max-content; */
     grid-template-columns: 1fr 150px 150px 150px 150px 150px 150px 150px 150px 1fr; 
     /* 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
     /* 150px 150px 150px 150px 150px 150px 150px 150px; */
-    grid-template-rows: 25px 150px 150px 25px;
-    /* 150px 150px; */
+    grid-template-rows: 25px 150px 150px 25px 40px;
     gap: 10px 10px;
-    /* justify-items: center; */
-    /* align-items: center;
-    justify-content: center; */
     grid-template-areas: "left pl1 pl1  pl1  pl1  pl1  pl1  pl1 pl1 right"
                          "left mP1 p1P1 p2P1 p3P1 p4P1 p5P1 p6P1 mP2 right"
                          "left mP1 p1P2 p2P2 p3P2 p4P2 p5P2 p6P2 mP2 right"
-                         "left pl2 pl2  pl2  pl2  pl2  pl2  pl2 pl2 right";
+                         "left pl2 pl2  pl2  pl2  pl2  pl2  pl2 pl2 right"
+                         "left res res  res  res  res  res  res res right";
 }
 
 .player1 {
@@ -63,33 +67,23 @@ main {
     height: 100%;
     width: 75%;
     font-size: 20px;
-    /* margin-left: 12.5%; */
     text-align: left;
     color: red;
-    /* grid-column: 2;
-    grid-row: 3 / 5;
-    height: 50%;
-    font-size: 30px; */
 }
 .player2 {
     grid-area: pl2;
     height: 100%;
     width: 75%;
     font-size: 20px;
-    /* margin-left: 12.5%; */
     text-align: right;
     color: red;
-    /* grid-column: 6;
-    grid-row: 3 / 5;
-    height: 50%; 
-    font-size: 30px; */
 }
 
 .MancalaPlayer1 {
     grid-area: mP1;
     height: 100%;
     width: 100%;
-    background-color: antiquewhite;
+    background-color: white;
     border: 2px solid black;
     font-size: 40px;
 }
@@ -97,7 +91,7 @@ main {
     grid-area: p1P1;
     height: 100%;
     width: 100%;
-    background-color: antiquewhite;
+    background-color: white;
     border: 2px solid black;
     font-size: 40px;
 }
@@ -105,7 +99,7 @@ main {
     grid-area: p2P1;
     height: 100%;
     width: 100%;
-    background-color: antiquewhite;
+    background-color: white;
     border: 2px solid black;
     font-size: 40px;
 }
@@ -113,7 +107,7 @@ main {
     grid-area: p3P1;
     height: 100%;
     width: 100%;
-    background-color: antiquewhite;
+    background-color: white;
     border: 2px solid black;
     font-size: 40px;
 }
@@ -121,7 +115,7 @@ main {
     grid-area: p4P1;
     height: 100%;
     width: 100%;
-    background-color: antiquewhite;
+    background-color: white;
     border: 2px solid black;
     font-size: 40px;
 }
@@ -129,7 +123,7 @@ main {
     grid-area: p5P1;
     height: 100%;
     width: 100%;
-    background-color: antiquewhite;
+    background-color: white;
     border: 2px solid black;
     font-size: 40px;
 }
@@ -137,7 +131,7 @@ main {
     grid-area: p6P1;
     height: 100%;
     width: 100%;
-    background-color: antiquewhite;
+    background-color: white;
     border: 2px solid black;
     font-size: 40px;
 }
@@ -145,7 +139,7 @@ main {
     grid-area: mP2;
     height: 100%;
     width: 100%;
-    background-color: antiquewhite;
+    background-color: white;
     border: 2px solid black;
     font-size: 40px;
 }
@@ -153,7 +147,7 @@ main {
     grid-area: p1P2;
     height: 100%;
     width: 100%;
-    background-color: antiquewhite;
+    background-color: white;
     border: 2px solid black;
     font-size: 40px;
 }
@@ -161,7 +155,7 @@ main {
     grid-area: p2P2;
     height: 100%;
     width: 100%;
-    background-color: antiquewhite;
+    background-color: white;
     border: 2px solid black;
     font-size: 40px;
 }
@@ -169,7 +163,7 @@ main {
     grid-area: p3P2;
     height: 100%;
     width: 100%;
-    background-color: antiquewhite;
+    background-color: white;
     border: 2px solid black;
     font-size: 40px;
 }
@@ -177,7 +171,7 @@ main {
     grid-area: p4P2;
     height: 100%;
     width: 100%;
-    background-color: antiquewhite;
+    background-color: white;
     border: 2px solid black;
     font-size: 40px;
 }
@@ -185,7 +179,7 @@ main {
     grid-area: p5P2;
     height: 100%;
     width: 100%;
-    background-color: antiquewhite;
+    background-color: white;
     border: 2px solid black;
     font-size: 40px;
 }
@@ -193,9 +187,13 @@ main {
     grid-area: p6P2;
     height: 100%;
     width: 100%;
-    background-color: antiquewhite;
+    background-color: white;
     border: 2px solid black;
     font-size: 40px;
+}
+.gameResult{
+    grid-area: res;
+    font-size: 30px;
 }
 .left {
     grid-area: left;
@@ -203,9 +201,10 @@ main {
 .right {
     grid-area: right;
 }
-footer {
-    grid-area: footer;
+section {
+    grid-area: section;
     display: grid;
+    margin-top:120px;
     grid-template-columns: 1fr 1fr 0.5fr 1fr 1fr;
     grid-template-rows: 1fr 1frfr 1fr;
     gap: 10px 10px;
@@ -216,7 +215,7 @@ p {
     grid-row: 1 / 3;
     height: 50%;
     font-size: 20px;
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
 .player1Score{
@@ -224,7 +223,7 @@ p {
     grid-row: 2 / 3;
     height: 50%;
     font-size: 20px;
-    margin-top: 20px;
+    margin-top: 10px;
     
 }
 .player2Score{
@@ -232,7 +231,7 @@ p {
     grid-row: 2 / 3;
     height: 50%;
     font-size: 20px;
-    margin-top: 20px;
+    margin-top: 10px;
 
 }
 button {
@@ -240,7 +239,51 @@ button {
     justify-content: center;
     grid-column: 3;
     grid-row: 3 / 3;
-    /* height: 70%; */
-    /* width: 100%; */
     font-size: 30px;
 }
+footer {
+    grid-area: footer;
+    color: white;
+    text-align: right;
+    font-size: 20px;
+    /* margin-top:80px; */
+    background-image: url("https://images.pexels.com/photos/3745234/pexels-photo-3745234.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    color: red;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
